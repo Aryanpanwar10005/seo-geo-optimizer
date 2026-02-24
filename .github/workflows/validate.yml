@@ -1,0 +1,129 @@
+name: Validate Skill File
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate SEO & GEO Skill File
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check skill file exists
+        run: |
+          if [ ! -f "skill/SEO_GEO_SKILL.md" ]; then
+            echo "❌ ERROR: skill/SEO_GEO_SKILL.md is missing"
+            exit 1
+          fi
+          echo "✅ skill/SEO_GEO_SKILL.md exists"
+
+      - name: Check skill file is not empty
+        run: |
+          SIZE=$(wc -c < "skill/SEO_GEO_SKILL.md")
+          echo "File size: $SIZE bytes"
+          if [ "$SIZE" -lt 10000 ]; then
+            echo "❌ ERROR: skill file is too small (under 10KB)"
+            exit 1
+          fi
+          echo "✅ Skill file size is healthy: $SIZE bytes"
+
+      - name: Check skill file line count
+        run: |
+          LINES=$(wc -l < "skill/SEO_GEO_SKILL.md")
+          echo "Line count: $LINES"
+          if [ "$LINES" -lt 100 ]; then
+            echo "❌ ERROR: skill file has fewer than 100 lines"
+            exit 1
+          fi
+          echo "✅ Line count is healthy: $LINES lines"
+
+      - name: Check required sections exist
+        run: |
+          REQUIRED_SECTIONS=(
+            "IRON LAWS"
+            "INTAKE QUESTIONNAIRE"
+            "COMPETITOR ANALYSIS"
+            "EXECUTION PLAN"
+            "OFFICIAL REFERENCES"
+            "CONTENT SEO"
+            "HEADING RULES"
+            "BLOGPOSTING"
+            "FEATURED SNIPPET"
+            "CONTENT CLUSTER"
+            "RSS FEED"
+            "AUTHOR E-E-A-T"
+            "INTEGRITY RULES"
+          )
+          ALL_PASS=true
+          for section in "${REQUIRED_SECTIONS[@]}"; do
+            if grep -qi "$section" skill/SEO_GEO_SKILL.md; then
+              echo "✅ Found section: $section"
+            else
+              echo "❌ MISSING section: $section"
+              ALL_PASS=false
+            fi
+          done
+          if [ "$ALL_PASS" = false ]; then
+            exit 1
+          fi
+
+      - name: Check bin/install.js exists
+        run: |
+          if [ ! -f "bin/install.js" ]; then
+            echo "❌ ERROR: bin/install.js is missing"
+            exit 1
+          fi
+          echo "✅ bin/install.js exists"
+
+      - name: Check package.json is valid JSON
+        run: |
+          node -e "
+            const fs = require('fs');
+            try {
+              const pkg = JSON.parse(
+                fs.readFileSync('package.json', 'utf8')
+              );
+              if (!pkg.name) throw new Error('Missing name field');
+              if (!pkg.version) throw new Error('Missing version field');
+              if (!pkg.bin) throw new Error('Missing bin field');
+              console.log('✅ package.json is valid');
+              console.log('   name:', pkg.name);
+              console.log('   version:', pkg.version);
+            } catch(e) {
+              console.error('❌ package.json error:', e.message);
+              process.exit(1);
+            }
+          "
+
+      - name: Check version consistency
+        run: |
+          node -e "
+            const fs  = require('fs');
+            const pkg = JSON.parse(
+              fs.readFileSync('package.json','utf8')
+            );
+            const src = fs.readFileSync('bin/install.js','utf8');
+            const vm  = src.match(/const VERSION\s*=\s*['\"]([^'\"]+)['\"]/);
+            const iv  = vm ? vm[1] : 'NOT FOUND';
+            if (pkg.version !== iv) {
+              console.error('❌ Version mismatch:');
+              console.error('   package.json:', pkg.version);
+              console.error('   install.js:  ', iv);
+              process.exit(1);
+            }
+            console.log('✅ Versions match:', pkg.version);
+          "
+
+      - name: All checks passed
+        run: |
+          echo ""
+          echo "══════════════════════════════════════"
+          echo "  ✅ All validation checks passed"
+          echo "  Skill file is healthy and complete (PART 1-14)"
+          echo "══════════════════════════════════════"
