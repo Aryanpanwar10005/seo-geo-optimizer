@@ -1,0 +1,62 @@
+{
+  "name": "seo-geo-optimizer",
+  "version": "1.0.0",
+  "description": "Universal SEO & GEO skill for AI IDEs — Google, Bing, AI Overviews, Bing Copilot, ChatGPT, Perplexity. Works with Cursor, Windsurf, GitHub Copilot, Replit, Lovable, Bolt, and any AI assistant.",
+  "bin": {
+    "seo-geo-optimizer": "./bin/install.js"
+  },
+  "scripts": {
+    "start": "node bin/install.js"
+  },
+  "keywords": [
+    "seo",
+    "geo",
+    "generative-engine-optimization",
+    "cursor",
+    "windsurf",
+    "copilot",
+    "github-copilot",
+    "lovable",
+    "bolt",
+    "replit",
+    "ai-rules",
+    "cursor-rules",
+    "windsurfrules",
+    "schema",
+    "schema-markup",
+    "json-ld",
+    "meta-tags",
+    "core-web-vitals",
+    "google",
+    "bing",
+    "ai-overviews",
+    "structured-data",
+    "e-e-a-t",
+    "technical-seo",
+    "seo-skill",
+    "ai-skill"
+  ],
+  "author": {
+    "name": "Aryan Panwar",
+    "url": "https://github.com/Aryanpanwar10005"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aryanpanwar10005/seo-geo-optimizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aryanpanwar10005/seo-geo-optimizer/issues"
+  },
+  "homepage": "https://github.com/Aryanpanwar10005/seo-geo-optimizer#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "bin/",
+    "skill/",
+    "README.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ]
+}
