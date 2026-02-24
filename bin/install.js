@@ -21,7 +21,7 @@ const https = require('https');
 
 const REPO_RAW       = 'https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md';
 const SKILL_FILENAME = 'SEO_GEO_SKILL.md';
-const VERSION        = '1.0.0';
+const VERSION        = '1.1.0';
 
 const IDE_TARGETS = {
   cursor: {
