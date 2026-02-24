@@ -7,6 +7,10 @@
 [![Verified](https://img.shields.io/badge/Verified-Google%20%26%20Bing%202025-blue.svg)](skill/SEO_GEO_SKILL.md)
 [![Works With](https://img.shields.io/badge/Works%20With-Cursor%20%7C%20Windsurf%20%7C%20Copilot%20%7C%20Replit%20%7C%20Lovable%20%7C%20Bolt-purple.svg)](skill/SEO_GEO_SKILL.md)
 
+<p align="center">
+  <img src="assets/demo.svg" alt="SEO & GEO Optimizer Terminal Demo" width="800">
+</p>
+
 ---
 
 ## What this is
@@ -179,6 +183,7 @@ Phase 10  Monitoring setup + ongoing update cadence
 ## What gets optimized
 
 ### Technical SEO
+
 - All HTML meta tags — `<title>`, `<meta description>`, `<canonical>`, `<robots>`, `<viewport>`
 - Open Graph and Twitter Cards for social sharing
 - `robots.txt` and XML sitemap — submitted to Google AND Bing separately
@@ -186,14 +191,17 @@ Phase 10  Monitoring setup + ongoing update cadence
 - JavaScript rendering audit (critical for Bing — CSR/SPA apps are invisible to Bingbot)
 
 ### Core Web Vitals
+
 - **LCP** (Largest Contentful Paint) < 2.5s
 - **INP** (Interaction to Next Paint) < 200ms — ⚠️ INP replaced FID in March 2024
 - **CLS** (Cumulative Layout Shift) < 0.1
 
 ### Schema Markup (JSON-LD — all templates included in skill)
+
 `Organization` · `WebSite` · `WebPage` · `Article` · `FAQPage` · `HowTo` · `Product` · `SoftwareApplication` · `LocalBusiness` · `BreadcrumbList` · `Person` · `AggregateRating`
 
 ### Google-Specific
+
 - E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness)
 - Helpful Content system compliance
 - Featured snippet optimization
@@ -201,6 +209,7 @@ Phase 10  Monitoring setup + ongoing update cadence
 - Google Search Console setup and monitoring
 
 ### Bing-Specific
+
 - Exact-match keyword placement (Bing weights this more heavily than Google)
 - Social signals strategy — Facebook, LinkedIn, X (explicit Bing ranking factor)
 - Bing Webmaster Tools setup and URL submission (completely separate from Google)
@@ -208,6 +217,7 @@ Phase 10  Monitoring setup + ongoing update cadence
 - Bing Places listing
 
 ### GEO — AI Search Visibility
+
 - FAQPage schema (3.2× more likely to appear in Google AI Overviews)
 - Self-contained H2 content blocks (AI engines read blocks, not whole pages)
 - Definitive answer format — "X is Y." patterns AI citation engines prefer
@@ -219,16 +229,16 @@ Phase 10  Monitoring setup + ongoing update cadence
 
 ## Supported IDEs
 
-| IDE | Auto-detect | Install path |
-|-----|-------------|-------------|
-| **Cursor** | ✅ Yes | `.cursor/rules/seo-geo-optimizer.mdc` |
-| **Windsurf** | ✅ Yes | `.windsurf/rules/seo-geo-optimizer.md` |
-| **GitHub Copilot** | ✅ Yes | `.github/copilot-instructions.md` |
-| **Lovable** | ✅ Yes | `.ai/seo-geo-optimizer.md` |
-| **Bolt** | ✅ Yes | `.bolt/prompt` |
-| **Replit** | Manual | Paste into system prompt |
-| **VS Code (any AI)** | Manual | `.github/copilot-instructions.md` or system prompt |
-| **Any AI assistant** | Manual | Paste `skill/SEO_GEO_SKILL.md` as context |
+| IDE                  | Auto-detect | Install path                                       |
+| -------------------- | ----------- | -------------------------------------------------- |
+| **Cursor**           | ✅ Yes      | `.cursor/rules/seo-geo-optimizer.mdc`              |
+| **Windsurf**         | ✅ Yes      | `.windsurf/rules/seo-geo-optimizer.md`             |
+| **GitHub Copilot**   | ✅ Yes      | `.github/copilot-instructions.md`                  |
+| **Lovable**          | ✅ Yes      | `.ai/seo-geo-optimizer.md`                         |
+| **Bolt**             | ✅ Yes      | `.bolt/prompt`                                     |
+| **Replit**           | Manual      | Paste into system prompt                           |
+| **VS Code (any AI)** | Manual      | `.github/copilot-instructions.md` or system prompt |
+| **Any AI assistant** | Manual      | Paste `skill/SEO_GEO_SKILL.md` as context          |
 
 ---
 
@@ -264,13 +274,13 @@ seo-geo-optimizer/
 
 ## Verified against
 
-| Source | Version |
-|--------|---------|
-| Google Search Central | December 2025 |
-| Core Web Vitals — INP replaces FID | March 2024 |
-| Google June 2025 Core Update | June 2025 |
-| Bing Webmaster Guidelines | 2025 |
-| Schema.org vocabulary | Current |
+| Source                             | Version       |
+| ---------------------------------- | ------------- |
+| Google Search Central              | December 2025 |
+| Core Web Vitals — INP replaces FID | March 2024    |
+| Google June 2025 Core Update       | June 2025     |
+| Bing Webmaster Guidelines          | 2025          |
+| Schema.org vocabulary              | Current       |
 
 Every recommendation inside the skill file includes its official source URL. When Google or Bing updates their guidelines, those links tell your AI exactly what changed.
 
