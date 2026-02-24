@@ -1,6 +1,6 @@
 {
   "name": "seo-geo-optimizer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Universal SEO & GEO skill for AI IDEs — Google, Bing, AI Overviews, Bing Copilot, ChatGPT, Perplexity. Works with Cursor, Windsurf, GitHub Copilot, Replit, Lovable, Bolt, and any AI assistant.",
   "bin": {
     "seo-geo-optimizer": "./bin/install.js"

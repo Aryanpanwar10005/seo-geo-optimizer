@@ -8,7 +8,7 @@
 [![Works With](https://img.shields.io/badge/Works%20With-Cursor%20%7C%20Windsurf%20%7C%20Copilot%20%7C%20Replit%20%7C%20Lovable%20%7C%20Bolt-purple.svg)](skill/SEO_GEO_SKILL.md)
 
 <p align="center">
-  <img src="assets/demo.svg" alt="SEO & GEO Optimizer Terminal Demo" width="800">
+  <img src="assets/preview.png" alt="SEO & GEO Optimizer Terminal Demo" width="800">
 </p>
 
 ---
@@ -163,7 +163,7 @@ That's the trigger phrase. Your AI will confirm it read the full file, then begi
 ## What happens after activation
 
 ```
-Phase 0   Read the entire skill file (Part 1 to 15) — confirm before proceeding
+Phase 0   Read the entire skill file (Part 1 to 14) — confirm before proceeding
 Phase 1   Complete all 40 intake questions (Part 3)
 Phase 2   SEO Competitor analysis (3–5 real SEO competitors — Part 4)
 Phase 3   Keyword & Opportunity Gap Assessment
@@ -176,7 +176,7 @@ Phase 9   Execute Tier 5: Content SEO & Blog optimization → reports → stops
 Phase 10  Full verification checklist — every tool, every item, pass/fail
 Phase 11  Maintenance monitoring setup (Part 11)
 Phase 12  Timeline & Maintenance Schedule (Part 12)
-Phase 13  Official Reference Handover (Part 15)
+Phase 13  Official Reference Handover (Part 13)
 Phase 14  Skill Completion & Final Audit REPORT
 ```
 
@@ -202,7 +202,7 @@ Phase 14  Skill Completion & Final Audit REPORT
 
 ### Schema Markup (JSON-LD — all templates included in skill)
 
-`Organization` · `WebSite` · `WebPage` · `Article` · `FAQPage` · `HowTo` · `Product` · `SoftwareApplication` · `LocalBusiness` · `BreadcrumbList` · `Person` · `AggregateRating`
+`Organization` · `WebSite` · `WebPage` · `Article` · `BlogPosting` · `NewsArticle` · `FAQPage` · `HowTo` · `Product` · `SoftwareApplication` · `LocalBusiness` · `BreadcrumbList` · `Person` · `AggregateRating`
 
 ### Google-Specific
 
@@ -219,6 +219,13 @@ Phase 14  Skill Completion & Final Audit REPORT
 - Bing Webmaster Tools setup and URL submission (completely separate from Google)
 - JavaScript rendering fix for React/Vue/Angular CSR apps
 - Bing Places listing
+
+### Content SEO
+
+- `BlogPosting` and `NewsArticle` schema support
+- Pillar-Cluster model (Content cluster) strategy
+- IndexNow protocol integration for instant indexing
+- Google Quality Rater Guidelines (E-E-A-T) adherence
 
 ### GEO — AI Search Visibility
 

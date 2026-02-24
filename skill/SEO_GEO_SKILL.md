@@ -71,7 +71,7 @@ If a workaround or temporary patch is applied at the user's request, label it ex
 Follow this exact sequence every engagement. No skipping. No reordering. Update the [ ] Phase Completion State after every phase is successfully reported.
 
 ```
-PHASE 0  → Read this entire skill file (Part 1 to 15) — confirm before proceeding
+PHASE 0  → Read this entire skill file (Part 1 to 14) — confirm before proceeding
 PHASE 1  → Complete all 40 intake questions (Part 3)
 PHASE 2  → SEO Competitor analysis (3–5 real SEO competitors — Part 4)
 PHASE 3  → Keyword & Opportunity Gap Assessment
@@ -84,7 +84,7 @@ PHASE 9  → Execute Tier 5 only (Content SEO & Blog Optimization) → verify �
 PHASE 10 → Final verification checklist (all tools, pass/fail for every item — Part 10)
 PHASE 11 → Maintenance monitoring setup (Part 11)
 PHASE 12 → Timeline & Maintenance Schedule (Part 12)
-PHASE 13 → Official Reference Handover (Part 15)
+PHASE 13 → Official Reference Handover (Part 13)
 PHASE 14 → Skill Completion & Final Audit REPORT
 ```
 
@@ -348,21 +348,21 @@ List the top 3–5 most urgent issues found. Each finding must state:
 
 #### TIER 5 — Content SEO & Blog Optimization (Week 4–5)
 
-| ID   | Action                                                                                                                   | Why                                                                     | Official Reference                                                                                         |
-| ---- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| T5-1 | Audit H1/H2/H3 structure: ensure one H1 per page, standalone H2 answer blocks, and correct heading hierarchy             | Blocks are the extraction unit for AI Overviews and Copilot             | [Google: Snippets](https://developers.google.com/search/docs/appearance/featured-snippets)                 |
-| T5-2 | Restructure intro paragraphs: lead with the direct answer (inverted pyramid) in the first 40–60 words                    | Increases featured snippet eligibility + AI extraction reliability      | [Google: Snippets](https://developers.google.com/search/docs/appearance/featured-snippets)                 |
-| T5-3 | Add `BlogPosting` or `Article` schema to all content pages: headline, images (1:1/4:3/16:9), datePublished, dateModified | Required for Google Discover + Big Rich Results eligibility             | [Google: Article](https://developers.google.com/search/docs/appearance/structured-data/article)            |
-| T5-4 | Implement Pillar-Cluster model: one pillar page per topic linking to 8–12 cluster pages                                  | Establishes topical authority — critical for the Helpful Content System | [Google: Helpful Content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) |
-| T5-5 | Author E-E-A-T audit: visible byline, custom author bio, and link to credentialed author page with `Person` schema       | Core trust signal for both Google (E-E-A-T) and users                   | [Google: E-E-A-T](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)         |
-| T5-6 | Content freshness sync: update `dateModified` only when substantive content changes occur                                | Fake freshness (date changes without content updates) is penalized      | [Google: Blog](https://developers.google.com/search/blog)                                                  |
-| T5-7 | RSS Feed + WebSub/IndexNow setup: submit RSS to GSC/Bing WT and enable immediate pinging on publish                      | Fastest route to indexing new content in Google AND Bing                | [Google: RSS](https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom)   |
+| ID   | Action                                                                                                                                       | Why                                                                     | Official Reference                                                                                         |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| T5-1 | Audit H1/H2/H3 structure: ensure one H1 per page, standalone H2 answer blocks, and correct heading hierarchy                                 | Blocks are the extraction unit for AI Overviews and Copilot             | [Google: Snippets](https://developers.google.com/search/docs/appearance/featured-snippets)                 |
+| T5-2 | Restructure intro paragraphs: lead with the direct answer (inverted pyramid) in the first 40–60 words                                        | Increases featured snippet eligibility + AI extraction reliability      | [Google: Snippets](https://developers.google.com/search/docs/appearance/featured-snippets)                 |
+| T5-3 | Add `BlogPosting` or `Article` schema to all content pages: headline, images (Image aspect ratios 1:1/4:3/16:9), datePublished, dateModified | Required for Google Discover + Big Rich Results eligibility             | [Google: Article](https://developers.google.com/search/docs/appearance/structured-data/article)            |
+| T5-4 | Implement Pillar-Cluster model (Semantic keyword clusters): one pillar page per topic linking to 8–12 cluster pages                          | Establishes topical authority — critical for the Helpful Content System | [Google: Helpful Content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) |
+| T5-5 | Author E-E-A-T audit: visible byline, custom author bio, and link to credentialed author page with `Person` schema                           | Core trust signal for both Google (E-E-A-T) and users                   | [Google: E-E-A-T](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)         |
+| T5-6 | Content freshness sync: update `dateModified` only when substantive content changes occur                                                    | Fake freshness (date changes without content updates) is penalized      | [Google: Blog](https://developers.google.com/search/blog)                                                  |
+| T5-7 | RSS Feed + WebSub/IndexNow setup: submit RSS to GSC/Bing WT and enable immediate pinging on publish                                          | Fastest route to indexing new content in Google AND Bing                | [Google: RSS](https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom)   |
 
 ---
 
 ## PART 6 — SCHEMA JSON-LD TEMPLATES
 
-All templates use **JSON-LD format** (preferred by both Google and Bing). Insert inside `<script type="application/ld+json">` in `<head>`. Replace all `{{PLACEHOLDER}}` values with real data.
+All templates use **JSON-LD format** (preferred by both Google and Bing). Insert inside `<script type="application/ld+json">` in `<head>`. Replace all `{{GENERIC_VALUE}}` values with real data.
 
 ### Organization — Add to Every Homepage
 
@@ -1424,13 +1424,13 @@ Before creating any new article, check whether an existing page on the site alre
 
 - Publish one complete, fully useful article before publishing two partial ones
 - Every published article must fully cover its topic — splitting one topic across multiple thin articles creates cannibalization and dilutes authority
-- Do not publish placeholder or "coming soon" pages — unpublished drafts should remain private until complete
+- Do not publish dummy or "coming soon" pages — unpublished drafts should remain private until complete
 
 **Source:** https://developers.google.com/search/docs/fundamentals/creating-helpful-content
 
 ---
 
-## PART 15 — OFFICIAL REFERENCES INDEX
+## PART 13 — OFFICIAL REFERENCES INDEX
 
 All critical official documentation. Verify these are current at each re-audit. If a URL redirects or changes, note it and update the skill file.
 
