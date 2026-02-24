@@ -163,17 +163,21 @@ That's the trigger phrase. Your AI will confirm it read the full file, then begi
 ## What happens after activation
 
 ```
-Phase 0   Reads the entire skill file — confirms before proceeding
-Phase 1   Asks all 40 intake questions (product, audience, goals, GEO targets)
-Phase 2   Identifies and analyzes 3–5 real SEO competitors
-Phase 3   Gap and opportunity assessment vs. competitors
-Phase 4   Generates full Execution Plan Report → waits for written approval → stops
-Phase 5   Executes Tier 1: all meta tags + Organization + WebSite schema → reports → stops
-Phase 6   Executes Tier 2: Core Web Vitals + H1/H2 structure + Open Graph + schema → stops
-Phase 7   Executes Tier 3: FAQPage/HowTo/Author schema + topic cluster + internal links → stops
-Phase 8   Executes Tier 4: GEO restructuring + AI parsability + entity optimization → stops
-Phase 9   Full verification checklist — every tool, every item, pass/fail
-Phase 10  Monitoring setup + ongoing update cadence
+Phase 0   Read the entire skill file (Part 1 to 15) — confirm before proceeding
+Phase 1   Complete all 40 intake questions (Part 3)
+Phase 2   SEO Competitor analysis (3–5 real SEO competitors — Part 4)
+Phase 3   Keyword & Opportunity Gap Assessment
+Phase 4   Generate Execution Plan Report (EPR) → Approval Required
+Phase 5   Execute Tier 1: all meta tags + Organization + WebSite schema → reports → stops
+Phase 6   Execute Tier 2: Core Web Vitals + H1/H2 structure + Open Graph + schema → stops
+Phase 7   Execute Tier 3: FAQPage/HowTo/Author schema + topic cluster + internal links → stops
+Phase 8   Execute Tier 4: GEO restructuring + AI parsability + entity optimization → stops
+Phase 9   Execute Tier 5: Content SEO & Blog optimization → reports → stops
+Phase 10  Full verification checklist — every tool, every item, pass/fail
+Phase 11  Maintenance monitoring setup (Part 11)
+Phase 12  Timeline & Maintenance Schedule (Part 12)
+Phase 13  Official Reference Handover (Part 15)
+Phase 14  Skill Completion & Final Audit REPORT
 ```
 
 **The AI stops after every phase, reports what was done, and asks before continuing.**
