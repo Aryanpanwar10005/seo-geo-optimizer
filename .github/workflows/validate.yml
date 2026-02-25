@@ -120,6 +120,12 @@ jobs:
             console.log('✅ Versions match:', pkg.version);
           "
 
+      - name: Validate Antigravity install
+        run: |
+          mkdir -p ~/.gemini
+          cp skill/SEO_GEO_SKILL.md ~/.gemini/GEMINI.md
+          test -f ~/.gemini/GEMINI.md && echo "✓ Antigravity install works"
+
       - name: All checks passed
         run: |
           echo ""
