@@ -26,6 +26,6 @@ jobs:
             echo "Error: package.json version ($PKG_VERSION) does not match release tag ($TAG_VERSION)"
             exit 1
           fi
-      - run: npm publish
+      - run: npm publish --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

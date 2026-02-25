@@ -17,6 +17,7 @@
 
 const fs    = require('fs');
 const path  = require('path');
+const os    = require('os');
 const https = require('https');
 
 const REPO_RAW       = 'https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md';
@@ -58,6 +59,13 @@ const IDE_TARGETS = {
     primary:   '.bolt/prompt',
     fallback:  null,
     note:      'Appended to your Bolt project prompt file.'
+  },
+  antigravity: {
+    name:      'antigravity',
+    detection: ['.gemini'],
+    primary:   path.join(os.homedir(), '.gemini', 'GEMINI.md'),
+    fallback:  null,
+    note:      'Global installation - available in all projects'
   },
   generic: {
     name:      'Generic / Any AI IDE',
@@ -113,8 +121,15 @@ ${c.bold}OPTIONS${c.reset}
   ${c.cyan}--copilot${c.reset}       Install for GitHub Copilot (VS Code)
   ${c.cyan}--lovable${c.reset}       Install for Lovable
   ${c.cyan}--bolt${c.reset}          Install for Bolt
+  ${c.cyan}--antigravity${c.reset}   Install for Google Antigravity (Global)
   ${c.cyan}--all${c.reset}           Install for all supported IDEs at once
   ${c.cyan}--help${c.reset}          Show this help
+
+${c.bold}EXAMPLES${c.reset}
+  npx seo-geo-optimizer                    # Auto-detect and install
+  npx seo-geo-optimizer --cursor           # Install for Cursor only
+  npx seo-geo-optimizer --antigravity      # Install globally for Antigravity
+  npx seo-geo-optimizer --all              # Install for all IDEs
 
 ${c.bold}MANUAL INSTALL${c.reset}
   Copy the raw skill file from:
@@ -166,7 +181,17 @@ function downloadSkill(url) {
 
 function installToTarget(ideKey, skillContent, cwd) {
   const ide        = IDE_TARGETS[ideKey];
-  const targetPath = path.join(cwd, ide.primary);
+  let targetPath = ide.primary;
+  
+  if (targetPath.includes(os.homedir())) {
+    // Path already contains homedir (from path.join)
+    targetPath = ide.primary;
+  } else if (targetPath.startsWith('~')) {
+    targetPath = path.join(os.homedir(), targetPath.slice(1));
+  } else if (!path.isAbsolute(targetPath)) {
+    targetPath = path.join(cwd, targetPath);
+  }
+
   const targetDir  = path.dirname(targetPath);
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
@@ -178,8 +203,14 @@ function installToTarget(ideKey, skillContent, cwd) {
     log.warn(`Existing file backed up → ${c.gray}${path.relative(cwd, backup)}${c.reset}`);
   }
   fs.writeFileSync(targetPath, skillContent, 'utf8');
-  log.success(`${c.bold}${ide.name}${c.reset} → ${c.green}${path.relative(cwd, targetPath)}${c.reset}`);
-  log.info(`${c.gray}${ide.note}${c.reset}`);
+  log.success(`${c.bold}${ide.name}${c.reset} → ${c.green}${path.isAbsolute(targetPath) ? targetPath : path.relative(cwd, targetPath)}${c.reset}`);
+  
+  if (ideKey === 'antigravity') {
+    log.info(`${c.yellow}ℹ Global installation - available in all projects${c.reset}`);
+  } else {
+    log.info(`${c.gray}${ide.note}${c.reset}`);
+  }
+  
   return targetPath;
 }
 
@@ -198,7 +229,7 @@ async function main() {
   let targets = [];
 
   if (args.includes('--all')) {
-    targets = ['cursor', 'windsurf', 'copilot', 'lovable', 'bolt'];
+    targets = ['cursor', 'windsurf', 'copilot', 'lovable', 'bolt', 'antigravity'];
     log.title('Installing for ALL supported IDEs');
   } else if (args.includes('--cursor')) {
     targets = ['cursor'];
@@ -215,6 +246,9 @@ async function main() {
   } else if (args.includes('--bolt')) {
     targets = ['bolt'];
     log.title('Installing for Bolt');
+  } else if (args.includes('--antigravity')) {
+    targets = ['antigravity'];
+    log.title('Installing for Google Antigravity');
   } else {
     log.title('Auto-detecting your IDE...');
     targets = detectIDE(cwd);
@@ -252,11 +286,13 @@ async function main() {
   for (const ideKey of targets) {
     try {
       const filePath = installToTarget(ideKey, skillContent, cwd);
-      installed.push({ ide: IDE_TARGETS[ideKey].name, path: path.relative(cwd, filePath) });
+      const displayPath = path.isAbsolute(IDE_TARGETS[ideKey].primary) ? filePath : path.relative(cwd, filePath);
+      installed.push({ ide: IDE_TARGETS[ideKey].name, path: displayPath });
       log.blank();
     } catch (err) {
       log.error(`Failed to install for ${IDE_TARGETS[ideKey].name}: ${err.message}`);
       failed.push(IDE_TARGETS[ideKey].name);
+      if (ideKey === 'antigravity') process.exit(1);
     }
   }
 
