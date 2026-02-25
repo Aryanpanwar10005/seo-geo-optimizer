@@ -1,0 +1,31 @@
+name: Publish Package to npmjs
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm ci
+      - name: Verify Version Match
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          TAG_VERSION=${GITHUB_REF#refs/tags/v}
+          if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
+            echo "Error: package.json version ($PKG_VERSION) does not match release tag ($TAG_VERSION)"
+            exit 1
+          fi
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

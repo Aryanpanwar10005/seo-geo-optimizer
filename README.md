@@ -8,7 +8,7 @@
 [![Works With](https://img.shields.io/badge/Works%20With-Cursor%20%7C%20Windsurf%20%7C%20Copilot%20%7C%20Replit%20%7C%20Lovable%20%7C%20Bolt-purple.svg)](skill/SEO_GEO_SKILL.md)
 
 <p align="center">
-  <img src="assets/preview.png" alt="SEO & GEO Optimizer Terminal Demo" width="800">
+  <img src="assets/preview.svg" alt="SEO & GEO Optimizer Terminal Demo" width="800">
 </p>
 
 ---

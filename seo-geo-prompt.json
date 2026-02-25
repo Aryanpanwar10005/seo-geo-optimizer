@@ -1,0 +1,7 @@
+{
+  "name": "SEO & GEO Optimizer",
+  "description": "A Universal AI IDE Skill for SEO & GEO compliance.",
+  "prompt": "Read and activate the SEO & GEO Optimizer skill (skill/SEO_GEO_SKILL.md), and begin the implementation according to its rules.",
+  "author": "Aryan Panwar",
+  "version": "1.2.0"
+}
