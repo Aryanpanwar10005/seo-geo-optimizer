@@ -1,57 +1,61 @@
-# 🔍 SEO & GEO Optimizer
+<!-- REQUIRED: Use this exact header structure -->
 
-> The only AI skill that covers **Google · Bing · AI Overviews · Bing Copilot · ChatGPT · Perplexity** — in one file, for every AI IDE.
+<div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Verified](https://img.shields.io/badge/Verified-Google%20%26%20Bing%202025-blue.svg)](skill/SEO_GEO_SKILL.md)
-[![Works With](https://img.shields.io/badge/Works%20With-Cursor%20%7C%20Windsurf%20%7C%20Copilot%20%7C%20Replit%20%7C%20Lovable%20%7C%20Bolt-purple.svg)](skill/SEO_GEO_SKILL.md)
+<h1>🚀 seo-geo-optimizer</h1>
 
-<p align="center">
-  <img src="assets/preview.svg" alt="SEO & GEO Optimizer Terminal Demo" width="800">
-</p>
+<p><strong>The only AI skill that asks questions first, then does everything itself.</strong><br>
+Full SEO + GEO optimization — automated end-to-end by your IDE.</p>
 
----
+<!-- Badge row 1: npm + version + license -->
 
-## What this is
+[![npm version](https://img.shields.io/npm/v/seo-geo-optimizer?color=blue&style=flat-square)](https://www.npmjs.com/package/seo-geo-optimizer)
+[![npm downloads](https://img.shields.io/npm/dm/seo-geo-optimizer?color=green&style=flat-square)](https://www.npmjs.com/package/seo-geo-optimizer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Aryanpanwar10005/seo-geo-optimizer?style=flat-square&color=gold)](https://github.com/Aryanpanwar10005/seo-geo-optimizer/stargazers)
 
-A single `.md` skill file you drop into your AI IDE. Once active, your AI becomes a senior SEO + GEO strategist that:
+<!-- Badge row 2: IDE compatibility -->
 
-- Asks you **40 targeted intake questions** before touching anything
-- Analyzes **3–5 real SEO competitors** across Google and Bing
-- Builds a full **Execution Plan Report** and waits for your written approval
-- Executes across **10 phases** — stopping after each one to report and confirm
-- Covers both **traditional SEO** and **Generative Engine Optimization (GEO)** for AI search
+[![Works in Cursor](https://img.shields.io/badge/Cursor-Compatible-6C47FF?style=flat-square&logo=cursor)](https://cursor.sh)
+[![Works in Windsurf](https://img.shields.io/badge/Windsurf-Compatible-00C2CB?style=flat-square)](https://codeium.com/windsurf)
+[![Works in Bolt](https://img.shields.io/badge/Bolt-Compatible-FF6B35?style=flat-square)](https://bolt.new)
+[![Works with GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-Compatible-black?style=flat-square&logo=github)](https://github.com/features/copilot)
+[![Works in Claude Code](https://img.shields.io/badge/Claude_Code-Compatible-D4A017?style=flat-square)](https://claude.ai/code)
 
-**The AI never makes a change without your explicit approval. Ever.**
+<!-- Badge row 3: coverage stats -->
 
----
+[![IDEs Supported](https://img.shields.io/badge/IDEs_Supported-7+-purple?style=flat-square)](#-compatible-ides)
+[![Phases](https://img.shields.io/badge/Execution_Phases-14-blue?style=flat-square)](#-how-it-works)
+[![Iron Laws](https://img.shields.io/badge/Iron_Laws-16-red?style=flat-square)](#-iron-laws)
+[![Zero Manual Steps](https://img.shields.io/badge/Manual_Steps-Zero-brightgreen?style=flat-square)](#-how-it-works)
 
-## Install in one command
+</div>
+
+The tool automatically guides your AI assistant to generate and execute 14 rigorous, error-free phases of optimization for your site without asking you a single question after its initial interrogation. In essence, it asks you 40 questions to collect information on all possible states, handles generation of critical ranking components, formats the results for modern LLM-engines to utilize, and delivers concrete AI files, bypassing useless consultation completely. It is ideally geared for developers who view SEO optimization as a necessary but repetitive chore.
+
+<div align="center">
+  <img src="assets/preview.svg" alt="seo-geo-optimizer terminal demo" width="800">
+</div>
+
+## ⚡ Quick Start
+
+### Install in one command
 
 Open your terminal inside your project folder and run:
-
-```bash
-npx seo-geo-optimizer
-```
+`npx seo-geo-optimizer`
 
 That's it. The installer auto-detects your IDE and places the skill in the right directory.
 
----
-
-## Or copy-paste manually — no terminal needed
+### Or copy-paste manually — no terminal needed
 
 Choose your IDE below and follow the 2-step instructions.
 
-> 📄 **The raw skill file:** [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md) — this is what you're installing.
+📄 The raw skill file: `skill/SEO_GEO_SKILL.md` — this is what you're installing.
 
----
-
-### Cursor
+#### Cursor
 
 **Step 1** — Create the file `.cursor/rules/seo-geo-optimizer.mdc` in your project root.
-
-**Step 2** — Paste the full contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md) into it.
+**Step 2** — Paste the full contents of `skill/SEO_GEO_SKILL.md` into it.
 
 ```bash
 # Or via terminal
@@ -62,13 +66,10 @@ curl -o .cursor/rules/seo-geo-optimizer.mdc \
 
 The skill activates automatically in all Cursor AI and Composer sessions.
 
----
-
-### Windsurf
+#### Windsurf
 
 **Step 1** — Create the file `.windsurf/rules/seo-geo-optimizer.md` in your project root.
-
-**Step 2** — Paste the full contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md) into it.
+**Step 2** — Paste the full contents of `skill/SEO_GEO_SKILL.md` into it.
 
 ```bash
 # Or via terminal
@@ -79,13 +80,10 @@ curl -o .windsurf/rules/seo-geo-optimizer.md \
 
 The skill activates automatically in all Cascade AI sessions.
 
----
-
-### GitHub Copilot (VS Code)
+#### GitHub Copilot (VS Code)
 
 **Step 1** — Create the file `.github/copilot-instructions.md` in your project root.
-
-**Step 2** — Paste the full contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md) into it.
+**Step 2** — Paste the full contents of `skill/SEO_GEO_SKILL.md` into it.
 
 ```bash
 # Or via terminal
@@ -96,229 +94,349 @@ curl -o .github/copilot-instructions.md \
 
 The skill activates automatically in all Copilot Chat sessions inside VS Code.
 
----
-
-### Replit
+#### Replit
 
 Replit does not use rule files. Use this method:
-
 **Step 1** — Open your Replit project.
-
-**Step 2** — Click the AI assistant icon → open **System Prompt** or **Custom Instructions**.
-
-**Step 3** — Paste the full contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md) into the field.
-
+**Step 2** — Click the AI assistant icon → open System Prompt or Custom Instructions.
+**Step 3** — Paste the full contents of `skill/SEO_GEO_SKILL.md` into the field.
 **Step 4** — Save and start a new conversation.
 
-> Tip: You can also keep the raw file URL open in a browser tab and paste it fresh each session if Replit doesn't persist your system prompt between projects.
+Tip: You can also keep the raw file URL open in a browser tab and paste it fresh each session if Replit doesn't persist your system prompt between projects.
 
----
-
-### Lovable
+#### Lovable
 
 **Step 1** — Open your Lovable project settings.
-
-**Step 2** — Navigate to **Custom Instructions** or **System Prompt**.
-
-**Step 3** — Paste the full contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md).
+**Step 2** — Navigate to Custom Instructions or System Prompt.
+**Step 3** — Paste the full contents of `skill/SEO_GEO_SKILL.md`.
 
 Alternatively, the installer creates `.ai/seo-geo-optimizer.md` if you run `npx seo-geo-optimizer --lovable`.
 
----
-
-### Bolt
+#### Bolt
 
 **Step 1** — Open your Bolt project.
-
-**Step 2** — Go to **Project Settings → AI Instructions** or the prompt configuration panel.
-
-**Step 3** — Paste the full contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md).
+**Step 2** — Go to Project Settings → AI Instructions or the prompt configuration panel.
+**Step 3** — Paste the full contents of `skill/SEO_GEO_SKILL.md`.
 
 Alternatively, run `npx seo-geo-optimizer --bolt` to auto-install into `.bolt/prompt`.
 
----
+#### Antigravity (Google IDE)
 
-### Any other AI IDE or assistant
+Global Installation — Works across all projects automatically.
+**Step 1** — Create the global rules directory:
+
+```bash
+mkdir -p ~/.gemini
+```
+
+**Step 2** — Install the skill globally:
+
+```bash
+curl -o ~/.gemini/GEMINI.md \
+  https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md
+```
+
+Alternatively, run `npx seo-geo-optimizer --antigravity` to auto-install globally.
+The skill activates automatically in all Antigravity sessions across every project.
+
+#### Any other AI IDE or assistant
 
 If your IDE isn't listed, the pattern is always the same:
 
 1. Find where your IDE reads persistent AI instructions (rules file, system prompt, custom instructions, context file)
-2. Paste the full contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md) there
+2. Paste the full contents of `skill/SEO_GEO_SKILL.md` there
 3. Start a new session
 
 The skill file is plain Markdown. It works anywhere an AI can read text.
 
----
+## 🤖 How It Works
 
-## After install — tell your AI this
+**Step 1: One Conversation (Phase 0 — Intake)**
+The IDE asks precisely 40 questions collected across 5 distinct groups, forming all the required context data for your site optimization without manual interaction:
+
+- Group A: Site identity (8 questions — URL, brand, description, founding year, etc.)
+- Group B: Business type & goals (8 questions — type, audience, competitors, CMS, etc.)
+- Group C: Current SEO state (8 questions — existing schema, sitemap, traffic, etc.)
+- Group D: Content & links (8 questions — content type, social profiles, GSC, etc.)
+- Group E: Brand & AI presence (8 questions — knowledge panel, E-E-A-T, success KPIs, etc.)
+
+**Step 2: 14-Phase Auto-Execution**
+| Phase | Name | What Gets Generated |
+|-------|------|-------------------|
+| 1 | Site Intelligence Report | `site_intelligence_report.md` |
+| 2 | Competitor Analysis | `competitor_analysis.md` |
+| 3 | Execution Plan | `execution_plan.md` |
+| 4 | Content Strategy | `keyword_clusters.json` + `content_brief_{slug}.md` |
+| 5 | Technical SEO | `robots.txt` + `sitemap.xml` + `meta_tags.json` + `cwv_precheck.md` |
+| 6 | Schema & Structured Data | `organization_schema.json` + `{slug}_schema.json` per page |
+| 7 | GEO Optimization | `llms.txt` + `geo_tracking.json` |
+| 8 | Internal Architecture | `internal_link_audit.json` |
+| 9 | Content Generation | `content/{slug}.md` per page |
+| 10 | On-Page Optimization | All HTML meta tags injected |
+| 11 | GEO Citation Setup | `geo_tracking.json` baseline populated |
+| 12 | Final Verification | `final_verification_report.md` |
+| 13 | Maintenance Schedule | `maintenance_schedule.md` |
+| 14 | Deliverables Summary | `README_DELIVERABLES.md` |
+
+## 🏗️ What Gets Built (File Output Map)
 
 ```
-Read and activate the SEO & GEO Optimizer skill, then start the process.
+your-project/
+├── site_intelligence_report.md     ← Phase 1
+├── competitor_analysis.md          ← Phase 2
+├── execution_plan.md               ← Phase 3
+├── keyword_clusters.json           ← Phase 4
+├── content_briefs/
+│   ├── brief-{slug-1}.md           ← Phase 4
+│   ├── brief-{slug-2}.md           ← Phase 4
+│   └── brief-{slug-3}.md           ← Phase 4
+├── content/
+│   ├── {slug-1}.md                 ← Phase 9
+│   ├── {slug-2}.md                 ← Phase 9
+│   └── {slug-3}.md                 ← Phase 9
+├── robots.txt                      ← Phase 5 (AI crawlers allowed)
+├── sitemap.xml                     ← Phase 5
+├── llms.txt                        ← Phase 7 (GEO: AI context file)
+├── meta_tags.json                  ← Phase 5
+├── cwv_precheck.md                 ← Phase 5
+├── organization_schema.json        ← Phase 6 (entity resolution)
+├── {slug}_schema.json              ← Phase 6 (per page)
+├── internal_link_audit.json        ← Phase 8
+├── geo_tracking.json               ← Phase 7 + 11
+├── final_verification_report.md   ← Phase 12
+├── maintenance_schedule.md        ← Phase 13
+└── README_DELIVERABLES.md         ← Phase 14
 ```
 
-That's the trigger phrase. Your AI will confirm it read the full file, then begin Phase 1.
+## 🔒 The 16 Iron Laws
 
----
+Every task the IDE performs is governed by 16 non-negotiable rules, all verified programmatically:
 
-## What happens after activation
+| #      | Law                                                                              | Automated Check                                       |
+| ------ | -------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| LAW_1  | Read the ENTIRE skill file before starting Phase 0                               | Completion of this read = prerequisite                |
+| LAW_2  | Never skip Phase 0. Never assume answers. Always ask first                       | Phase 0 complete flag must be set                     |
+| LAW_3  | Never execute a phase until the previous phase is verified complete              | Phase completion checklist must pass                  |
+| LAW_4  | Every file generated must be written to disk — no output-only responses          | `fs.writeFileSync` or equivalent on every deliverable |
+| LAW_5  | Never ask the user a question that can be inferred from their answers            | Derive everything possible before asking              |
+| LAW_6  | All JSON must be validated before use. All schema must validate before injection | `JSON.parse()` + required fields check                |
+| LAW_7  | All URLs in schema must be absolute (https://). All dates must be ISO 8601       | Regex validation on every URL and date field          |
+| LAW_8  | Every page must open with a 40–60 word Direct Answer Block                       | Word count check on first paragraph                   |
+| LAW_9  | Every page must contain ≥1 cited statistic per 200 words                         | Fact density counter per section                      |
+| LAW_10 | Organization schema with `sameAs[]` must exist on every site                     | Schema presence check on homepage output              |
+| LAW_11 | GPTBot, PerplexityBot, ClaudeBot must be ALLOWED in robots.txt                   | robots.txt parser — allow rules check                 |
+| LAW_12 | No page may be orphaned (zero internal links pointing to it)                     | Internal link graph — zero-incoming-edge check        |
+| LAW_13 | H2 headings must be phrased as questions or full statements (>4 words)           | Regex: H2 ends in `?` OR word count > 4               |
+| LAW_14 | Never recommend, implement, or validate based on debunked myths                  | Anti-pattern check before any recommendation          |
+| LAW_15 | `llms.txt` must be generated at site root                                        | HTTP 200 check on `{url}/llms.txt` after generation   |
+| LAW_16 | All generated content must be written to files, not printed to chat              | File existence check after every generation step      |
 
-```
-Phase 0   Read the entire skill file (Part 1 to 14) — confirm before proceeding
-Phase 1   Complete all 40 intake questions (Part 3)
-Phase 2   SEO Competitor analysis (3–5 real SEO competitors — Part 4)
-Phase 3   Keyword & Opportunity Gap Assessment
-Phase 4   Generate Execution Plan Report (EPR) → Approval Required
-Phase 5   Execute Tier 1: all meta tags + Organization + WebSite schema → reports → stops
-Phase 6   Execute Tier 2: Core Web Vitals + H1/H2 structure + Open Graph + schema → stops
-Phase 7   Execute Tier 3: FAQPage/HowTo/Author schema + topic cluster + internal links → stops
-Phase 8   Execute Tier 4: GEO restructuring + AI parsability + entity optimization → stops
-Phase 9   Execute Tier 5: Content SEO & Blog optimization → reports → stops
-Phase 10  Full verification checklist — every tool, every item, pass/fail
-Phase 11  Maintenance monitoring setup (Part 11)
-Phase 12  Timeline & Maintenance Schedule (Part 12)
-Phase 13  Official Reference Handover (Part 13)
-Phase 14  Skill Completion & Final Audit REPORT
-```
+## 🌐 Compatible IDEs
 
-**The AI stops after every phase, reports what was done, and asks before continuing.**
+| IDE            | Status          | Auto-Install Path                      |
+| -------------- | --------------- | -------------------------------------- |
+| Cursor         | ✅ Full Support | `.cursor/rules/seo-geo-optimizer.md`   |
+| Windsurf       | ✅ Full Support | `.windsurf/rules/seo-geo-optimizer.md` |
+| GitHub Copilot | ✅ Full Support | `.github/copilot-instructions.md`      |
+| Bolt.new       | ✅ Full Support | `.bolt/prompt`                         |
+| Lovable        | ✅ Full Support | `AGENTS.md`                            |
+| Replit         | ✅ Full Support | `.replit/agent/instructions.md`        |
+| Claude Code    | ✅ Full Support | `CLAUDE.md`                            |
 
----
+If your IDE isn't listed, place the skill content in your IDE's system prompt or instructions file.
 
-## What gets optimized
+## 📊 What the Skill Covers
 
-### Technical SEO
+<table>
+<tr>
+<td>
 
-- All HTML meta tags — `<title>`, `<meta description>`, `<canonical>`, `<robots>`, `<viewport>`
-- Open Graph and Twitter Cards for social sharing
-- `robots.txt` and XML sitemap — submitted to Google AND Bing separately
-- HTTPS, mobile-first indexing, URL structure, internal linking
-- JavaScript rendering audit (critical for Bing — CSR/SPA apps are invisible to Bingbot)
+**SEO Coverage**
 
-### Core Web Vitals
+- Technical SEO (robots.txt, sitemap, CWV, meta tags, canonicals)
+- Content Strategy (keyword clusters, pillar pages, content briefs)
+- On-Page SEO (title tags, meta descriptions, H-tags, OG tags)
+- Internal Architecture (link graph, orphan pages, cannibalization)
+- Schema Markup (12 auto-detected types, JSON-LD, validation)
+- E-E-A-T Signals (author credibility, original data, citations)
+</td>
+<td>
 
-- **LCP** (Largest Contentful Paint) < 2.5s
-- **INP** (Interaction to Next Paint) < 200ms — ⚠️ INP replaced FID in March 2024
-- **CLS** (Cumulative Layout Shift) < 0.1
+**GEO Coverage**
 
-### Schema Markup (JSON-LD — all templates included in skill)
+- Entity Resolution (Organization schema + sameAs linking)
+- llms.txt Generation (AI crawler context file)
+- LLM Content Formatting (answer-first, fact-dense, question H2s)
+- AI Citation Tracking (Perplexity API test, monthly monitoring)
+- AI Bot Access (GPTBot, PerplexityBot, ClaudeBot allowlist)
+- Content Freshness (stale stat detection, dateModified injection)
+</td>
+<td>
 
-`Organization` · `WebSite` · `WebPage` · `Article` · `BlogPosting` · `NewsArticle` · `FAQPage` · `HowTo` · `Product` · `SoftwareApplication` · `LocalBusiness` · `BreadcrumbList` · `Person` · `AggregateRating`
+**Anti-Pattern Protection**
 
-### Google-Specific
+- 10 SEO myths the IDE will NEVER implement
+- Automated myth detection on all recommendations
+</td>
+</tr>
+</table>
 
-- E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness)
-- Helpful Content system compliance
-- Featured snippet optimization
-- Google AI Overviews eligibility
-- Google Search Console setup and monitoring
+## 💬 The 40 Intake Questions
 
-### Bing-Specific
+<details>
+<summary>Click to see all 40 questions the IDE asks you</summary>
 
-- Exact-match keyword placement (Bing weights this more heavily than Google)
-- Social signals strategy — Facebook, LinkedIn, X (explicit Bing ranking factor)
-- Bing Webmaster Tools setup and URL submission (completely separate from Google)
-- JavaScript rendering fix for React/Vue/Angular CSR apps
-- Bing Places listing
+### Group A — Site Identity (8 questions)
 
-### Content SEO
+1. What is your website URL?
+2. What is your brand/business name?
+3. In one sentence, what does your business do?
+4. What year was the business founded?
+5. What is your primary contact email?
+6. What country/region does your business primarily serve?
+7. What is the main language of your site content?
+8. Is this site new (under 6 months) or existing?
 
-- `BlogPosting` and `NewsArticle` schema support
-- Pillar-Cluster model (Content cluster) strategy
-- IndexNow protocol integration for instant indexing
-- Google Quality Rater Guidelines (E-E-A-T) adherence
+### Group B — Business Type & Goals (8 questions)
 
-### GEO — AI Search Visibility
+9. What type of business is this? (Blog / E-commerce / SaaS / Local / Agency / etc.)
+10. Who is your target audience? (Be specific)
+11. What are your top 3 target keywords or topics?
+12. Who are your top 2–3 competitors? (URLs preferred)
+13. What is your primary business goal for SEO?
+14. Do you have a Google Business Profile?
+15. Are there specific pages you want to optimize first?
+16. What CMS or tech stack is the site built on?
 
-- FAQPage schema (3.2× more likely to appear in Google AI Overviews)
-- Self-contained H2 content blocks (AI engines read blocks, not whole pages)
-- Definitive answer format — "X is Y." patterns AI citation engines prefer
-- Entity optimization for LLM citation selection
-- Table and list conversion for AI extraction
-- Citation links to credible sources
+### Group C — Current SEO State (8 questions)
 
----
+17. Does the site currently have any schema markup?
+18. Does the site have a sitemap.xml?
+19. Does the site have a robots.txt file?
+20. Roughly how many pages does the site have?
+21. Has the site ever had a Google penalty or manual action?
+22. Does the site appear in any AI search results (ChatGPT, Perplexity, AI Overviews)?
+23. What is the site's approximate monthly organic traffic?
+24. Are there any specific technical issues you're already aware of?
 
-## Supported IDEs
+### Group D — Content & Links (8 questions)
 
-| IDE                  | Auto-detect | Install path                                       |
-| -------------------- | ----------- | -------------------------------------------------- |
-| **Cursor**           | ✅ Yes      | `.cursor/rules/seo-geo-optimizer.mdc`              |
-| **Windsurf**         | ✅ Yes      | `.windsurf/rules/seo-geo-optimizer.md`             |
-| **GitHub Copilot**   | ✅ Yes      | `.github/copilot-instructions.md`                  |
-| **Lovable**          | ✅ Yes      | `.ai/seo-geo-optimizer.md`                         |
-| **Bolt**             | ✅ Yes      | `.bolt/prompt`                                     |
-| **Replit**           | Manual      | Paste into system prompt                           |
-| **VS Code (any AI)** | Manual      | `.github/copilot-instructions.md` or system prompt |
-| **Any AI assistant** | Manual      | Paste `skill/SEO_GEO_SKILL.md` as context          |
+25. What kind of content does the site primarily publish?
+26. How often is new content published?
+27. Does the site have a blog or resource section?
+28. Are there existing pages that used to get traffic but have declined?
+29. Has the site done any link building before?
+30. Which social media profiles does the business have?
+31. Is the business listed on any third-party directories or platforms?
+32. Does the site have a Google Search Console account connected?
 
----
+### Group E — Brand & AI Presence (8 questions)
 
-## Force install for a specific IDE
+33. Does a Google Knowledge Panel appear for your brand name?
+34. Is your business listed on Wikipedia or Wikidata?
+35. Have you been cited in any major publications or industry blogs?
+36. What makes your business the authoritative source on your main topic? (E-E-A-T)
+37. Do you have any original data or research that only your business has published?
+38. What is the single most important question your audience asks that you should answer?
+39. Are there topics or keywords you explicitly want to AVOID appearing for?
+40. What does success look like in 6 months?
 
-```bash
-npx seo-geo-optimizer --cursor      # Cursor only
-npx seo-geo-optimizer --windsurf    # Windsurf only
-npx seo-geo-optimizer --copilot     # GitHub Copilot only
-npx seo-geo-optimizer --lovable     # Lovable only
-npx seo-geo-optimizer --bolt        # Bolt only
-npx seo-geo-optimizer --all         # All IDEs at once
-npx seo-geo-optimizer --help        # Show all options
-```
+</details>
 
----
+## 🚫 10 SEO Myths This Skill Will Never Implement
 
-## Repo structure
+<details>
+<summary>See the anti-pattern list</summary>
+
+| If you ask for this...                             | The skill will say...                                                |
+| -------------------------------------------------- | -------------------------------------------------------------------- |
+| Force Google to crawl via sitemap                  | Sitemaps are suggestions. Fix internal links instead.                |
+| Fix all GSC errors to improve rankings             | GSC errors don't subtract ranking points. They're informational.     |
+| Refresh content to boost SEO                       | Only helps freshness-sensitive queries. Add new information or skip. |
+| Disavow low-DA backlinks                           | Google ignores them. Mass-disavowing loses you authority.            |
+| Enforce strict H-tag hierarchy                     | Google doesn't penalize H-tag structure. Optimize for readability.   |
+| Optimize for bounce rate / dwell time              | Google doesn't use on-site engagement metrics as ranking signals.    |
+| Fix site speed first — it's the top ranking factor | CWV are tiebreakers. Authority matters more.                         |
+| Add images to every post for SEO                   | Decorative images add load time and zero ranking benefit.            |
+| Build our EEAT score                               | There's no EEAT score. Build genuine expertise signals instead.      |
+| Remove low-DA backlinks — they're hurting us       | They don't hurt. Removal wastes time and can harm your profile.      |
+
+</details>
+
+## 📁 Repository Structure
 
 ```
 seo-geo-optimizer/
-├── bin/
-│   └── install.js          ← CLI installer (auto-detects + installs)
 ├── skill/
-│   └── SEO_GEO_SKILL.md    ← The skill file — this is what the AI reads
-├── package.json
-├── CONTRIBUTING.md
-├── LICENSE
-└── README.md
+│   └── SEO_GEO_SKILL.md        ← The skill file (place in your IDE)
+├── bin/
+│   └── install.js              ← Auto-installer (run via npx)
+├── assets/
+│   └── preview.svg             ← Terminal demo image
+├── .github/
+│   └── workflows/
+│       ├── publish.yml         ← Auto-publish to npm on release
+│       └── validate.yml        ← Validate skill + JSON on every push
+├── package.json                ← npm package config (v1.2.0)
+├── seo-geo-prompt.json         ← Machine-readable skill schema
+└── README.md                   ← This file
 ```
 
+## 🛠️ Manual Installation
+
+If you prefer to install manually instead of using `npx seo-geo-optimizer`:
+
+**1. Download the skill file**
+Copy the contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md)
+
+**2. Place it in your IDE's rules folder**
+
+| IDE            | Path                                   |
+| -------------- | -------------------------------------- |
+| Cursor         | `.cursor/rules/seo-geo-optimizer.md`   |
+| Windsurf       | `.windsurf/rules/seo-geo-optimizer.md` |
+| GitHub Copilot | `.github/copilot-instructions.md`      |
+| Bolt.new       | `.bolt/prompt`                         |
+| Lovable        | `AGENTS.md`                            |
+| Replit         | `.replit/agent/instructions.md`        |
+| Claude Code    | `CLAUDE.md`                            |
+
+**3. Activate in your IDE**
+Open your AI chat and type: `Start seo-geo-optimizer`
+
+## 🤝 Contributing
+
+Contributions are welcome. Before opening a PR:
+
+1. Fork the repo
+2. Make your changes to `skill/SEO_GEO_SKILL.md` or `bin/install.js`
+3. Run `npm run validate` to check skill file integrity
+4. Open a PR with a clear description of what changed and why
+
+**What we're looking for:**
+
+- New automation phases that require zero manual steps
+- More schema types in the auto-detector
+- Additional IDE compatibility
+- Better intake questions that derive more from fewer answers
+
+**What we don't accept:**
+
+- Tasks requiring manual user action mid-execution
+- Myth-based recommendations (see anti-pattern list)
+- Changes that break the `npx seo-geo-optimizer` install flow
+
+## 📜 License
+
+MIT — see [LICENSE](LICENSE) for details.
+
 ---
 
-## Verified against
+<div align="center">
 
-| Source                             | Version       |
-| ---------------------------------- | ------------- |
-| Google Search Central              | December 2025 |
-| Core Web Vitals — INP replaces FID | March 2024    |
-| Google June 2025 Core Update       | June 2025     |
-| Bing Webmaster Guidelines          | 2025          |
-| Schema.org vocabulary              | Current       |
+**[⭐ Star this repo](https://github.com/Aryanpanwar10005/seo-geo-optimizer/stargazers)**
+if it saves you time — it helps others find it too.
 
-Every recommendation inside the skill file includes its official source URL. When Google or Bing updates their guidelines, those links tell your AI exactly what changed.
+Made with ☕ by [Aryan Panwar](https://github.com/Aryanpanwar10005)
 
----
-
-## Philosophy
-
-**No guessing. No autonomous changes. No generic advice.**
-
-The AI asks before acting. Plans before executing. Stops and reports after every phase. You approve every change — not silence, not a nod, written approval only.
-
-The AI is your analyst and planner. You are the decision-maker.
-
----
-
-## Contributing
-
-Found a ranking factor that changed? Open a PR updating `skill/SEO_GEO_SKILL.md` with the new official reference link. Read [CONTRIBUTING.md](CONTRIBUTING.md) first.
-
----
-
-## License
-
-MIT — free to use, modify, and share.
-
----
-
-## Author
-
-Built by [Aryan Panwar](https://github.com/Aryanpanwar10005)
+</div>
