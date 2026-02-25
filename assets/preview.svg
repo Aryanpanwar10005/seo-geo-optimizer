@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <rect width="800" height="400" rx="10" fill="#1e1e1e" />
+  <circle cx="20" cy="20" r="6" fill="#ff5f56" />
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e" />
+  <circle cx="60" cy="20" r="6" fill="#27c93f" />
+  <rect x="0" y="40" width="800" height="360" fill="#0b0b0b" rx="0" clip-path="inset(0 0 0 0 round 0 0 10px 10px)"/>
+  
+  <text x="20" y="75" font-family="monospace" font-size="16" fill="#27c93f">➜</text>
+  <text x="40" y="75" font-family="monospace" font-size="16" fill="#4ea5ff">~</text>
+  <text x="60" y="75" font-family="monospace" font-size="16" fill="#ffffff">npx seo-geo-optimizer</text>
+  
+  <text x="20" y="115" font-family="monospace" font-size="15" fill="#a0a0a0">ℹ  Auto-detecting your IDE...</text>
+  <text x="20" y="140" font-family="monospace" font-size="15" fill="#27c93f">✔  Detected: Cursor</text>
+  
+  <text x="20" y="180" font-family="monospace" font-size="15" fill="#a0a0a0">ℹ  Downloading SEO &amp; GEO skill file...</text>
+  <text x="20" y="205" font-family="monospace" font-size="15" fill="#27c93f">✔  Skill file ready (91.2 KB)</text>
+  
+  <text x="20" y="245" font-family="monospace" font-size="15" fill="#ffffff">Installing...</text>
+  <text x="20" y="270" font-family="monospace" font-size="15" fill="#27c93f">✔  Cursor → .cursor/rules/seo-geo-optimizer.mdc</text>
+  
+  <text x="20" y="310" font-family="monospace" font-size="15" fill="#ffbd2e">Next step — tell your AI:</text>
+  <text x="20" y="335" font-family="monospace" font-size="15" fill="#ffffff">"Read and activate the SEO &amp; GEO Optimizer skill, then start the process."</text>
+</svg>
