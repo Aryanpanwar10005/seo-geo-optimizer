@@ -1,5 +1,10 @@
 # SEO & GEO OPTIMIZER — Universal AI Skill
 
+> **⚠️ ALWAYS READ THIS FILE, BUT THIS SKILL IS IN PASSIVE MODE BY DEFAULT.**
+> You must ALWAYS read this entire skill file, but do NOT execute PHASE 0 (the workflow) unless the user explicitly types `/seo` or `run seo-geo-optimizer`. 
+> Treat "ambiguous" triggers as any user message that mentions SEO/geo concepts without the exact commands `/seo` or `run seo-geo-optimizer`. In those cases, answer the user's question rather than run the workflow.
+> Instead of a confirmation loop for ambiguous triggers, ask a single clarifying prompt: "Do you want to run the full SEO-GEO optimizer? If yes, please send `/seo` to start." Sending `/seo` is treated as a new explicit trigger that directly starts PHASE 0.
+
 **Purpose:** Transform any web product from unranked to fully visible across Google, Bing, Google AI Overviews, Bing Copilot, ChatGPT, and Perplexity. Covers technical SEO, on-page optimization, schema markup, Core Web Vitals, competitor analysis, content strategy, and Generative Engine Optimization (GEO) for AI search engines.
 
 **Compatible with:** Cursor · Windsurf · Lovable · Bolt · GitHub Copilot · Replit · VS Code · Any AI assistant
@@ -23,7 +28,7 @@
 
 **In Lovable / Bolt / Replit:** Paste the full contents into the system prompt or custom instructions field
 
-**Activation trigger:** When the user asks anything related to SEO, rankings, meta tags, schema, structured data, Core Web Vitals, GEO, AI search visibility, competitor analysis, Google/Bing optimization, or improving search visibility — load and follow this entire skill document before responding.
+**Activation trigger:** The user must explicitly type the command `/seo` or the phrase `run seo-geo-optimizer` to activate this skill.
 
 ---
 
@@ -71,7 +76,7 @@ If a workaround or temporary patch is applied at the user's request, label it ex
 Follow this exact sequence every engagement. No skipping. No reordering. Update the [ ] Phase Completion State after every phase is successfully reported.
 
 ```
-PHASE 0  → Read this entire skill file (Part 1 to 14) — confirm before proceeding
+PHASE 0  → Initialize the intake questionnaire — confirm before proceeding
 PHASE 1  → Complete all 40 intake questions (Part 3)
 PHASE 2  → SEO Competitor analysis (3–5 real SEO competitors — Part 4)
 PHASE 3  → Keyword & Opportunity Gap Assessment
@@ -107,9 +112,11 @@ PHASE 14 → Skill Completion & Final Audit REPORT
 
 ### Phase 0 — Initialize
 
-Read this entire file. Then say to the user:
+Only execute Phase 0 if the explicit trigger command (`/seo` or `run seo-geo-optimizer`) was used. If the trigger is ambiguous, ask the user a single clarifying prompt: "Do you want to run the full SEO-GEO optimizer? If yes, please send `/seo` to start." (Do not loop; wait for the explicit trigger).
 
-> "I have read the full SEO & GEO skill. Before I build your strategy, I need to ask 40 questions across 5 groups. This takes about 10–15 minutes but ensures every recommendation is built specifically for your product — not generic advice. Ready to begin?"
+If the explicit trigger is received, start the intake questionnaire by saying to the user:
+
+> "Before I build your strategy, I need to ask 40 questions across 5 groups. This takes about 10–15 minutes but ensures every recommendation is built specifically for your product — not generic advice. Ready to begin?"
 
 ### Phase 4 — Critical Stop
 
