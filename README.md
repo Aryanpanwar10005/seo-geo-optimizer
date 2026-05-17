@@ -69,7 +69,7 @@ curl -o .cursor/rules/seo-geo-optimizer.mdc \
   https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md
 ```
 
-The skill activates automatically in all Cursor AI and Composer sessions.
+Once installed, type `/seo` in your Cursor AI or Composer session to activate.
 
 #### Windsurf
 
@@ -83,7 +83,7 @@ curl -o .windsurf/rules/seo-geo-optimizer.mdc \
   https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md
 ```
 
-The skill activates automatically in all Cascade AI sessions.
+Once installed, type `/seo` in your Windsurf Cascade AI session to activate.
 
 #### GitHub Copilot (VS Code)
 
@@ -97,7 +97,7 @@ curl -o .github/copilot-instructions.md \
   https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md
 ```
 
-The skill activates automatically in all Copilot Chat sessions inside VS Code.
+Once installed, type `/seo` in your Copilot Chat session inside VS Code to activate.
 
 #### Claude Code
 
@@ -166,7 +166,7 @@ curl -o ~/.gemini/GEMINI.md \
 > **⚠️ WARNING:** This will overwrite any existing `~/.gemini/GEMINI.md`. Please back it up first, or set `GEMINI_CLI_HOME` to isolate your Gemini home directory.
 
 Alternatively, run `npx seo-geo-optimizer --antigravity --global` to auto-install globally.
-The skill activates automatically in all Antigravity sessions.
+Once installed, type `/seo` in your Antigravity session to activate.
 
 #### Any other AI IDE or assistant
 
@@ -180,8 +180,8 @@ The skill file is plain Markdown. It works anywhere an AI can read text.
 
 ## 🤖 How It Works
 
-**Step 1: One Conversation (Phase 0 — Intake)**
-The IDE asks precisely 40 questions collected across 5 distinct groups, forming all the required context data for your site optimization without manual interaction:
+**Step 1: Trigger the skill (Phase 0 — Initialize)**
+Type `/seo` or `run seo-geo-optimizer` in your AI chat. The skill will then run the intake questionnaire — 40 questions across 5 groups — to collect everything it needs before touching your site:
 
 - Group A: Site identity (8 questions — URL, brand, description, founding year, etc.)
 - Group B: Business type & goals (8 questions — type, audience, competitors, CMS, etc.)
@@ -402,14 +402,18 @@ seo-geo-optimizer/
 │   └── SEO_GEO_SKILL.md        ← The skill file (place in your IDE)
 ├── bin/
 │   └── install.js              ← Auto-installer (run via npx)
+├── test/
+│   └── install.test.js         ← Jest CLI tests
+├── examples/
+│   ├── intake_data.json        ← Sample Phase 0 output
+│   └── llms.txt                ← Sample llms.txt output
 ├── assets/
 │   └── preview.svg             ← Terminal demo image
 ├── .github/
 │   └── workflows/
-│       ├── publish.yml         ← Auto-publish to npm on release
+│       ├── publish.yml         ← Auto-publish to npm on tag release
 │       └── validate.yml        ← Validate skill + JSON on every push
 ├── package.json                ← npm package config (v2.0.0)
-├── seo-geo-prompt.json         ← Machine-readable skill schema
 └── README.md                   ← This file
 ```
 
