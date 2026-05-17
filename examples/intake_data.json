@@ -1,0 +1,18 @@
+{
+  "site_url": "https://example.com",
+  "brand_name": "Acme Corp",
+  "brand_description": "We provide the best AI-powered SEO optimization tools for startups.",
+  "founding_date": "2020",
+  "contact_email": "hello@example.com",
+  "target_region": "Global",
+  "content_language": "en-US",
+  "site_age": "existing",
+  "business_type": "SaaS",
+  "target_audience": "Startup founders and indie hackers",
+  "primary_keywords": ["ai seo tool", "automated seo", "seo optimizer"],
+  "competitors": ["https://competitor1.com", "https://competitor2.com"],
+  "primary_goal": "AI visibility/citations",
+  "has_gbp": "No",
+  "priority_pages": ["/", "/pricing", "/features"],
+  "cms_platform": "Next.js"
+}

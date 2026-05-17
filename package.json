@@ -1,12 +1,13 @@
 {
   "name": "seo-geo-optimizer",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Universal SEO & GEO skill for AI IDEs — Google, Bing, AI Overviews, Bing Copilot, ChatGPT, Perplexity. Works with Cursor, Windsurf, GitHub Copilot, Replit, Lovable, Bolt, and any AI assistant.",
   "bin": {
     "seo-geo-optimizer": "./bin/install.js"
   },
   "scripts": {
-    "start": "node bin/install.js"
+    "start": "node bin/install.js",
+    "test": "jest"
   },
   "keywords": [
     "seo",
@@ -38,7 +39,10 @@
     "e-e-a-t",
     "technical-seo",
     "seo-skill",
-    "ai-skill"
+    "ai-skill",
+    "trae",
+    "claude-code",
+    "mdc"
   ],
   "author": {
     "name": "Aryan Panwar",
@@ -63,5 +67,8 @@
     "README.md",
     "CONTRIBUTING.md",
     "LICENSE"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
 }

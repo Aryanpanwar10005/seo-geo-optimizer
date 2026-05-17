@@ -22,7 +22,7 @@ const https = require('https');
 
 const REPO_RAW       = 'https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md';
 const SKILL_FILENAME = 'SEO_GEO_SKILL.md';
-const VERSION        = '1.2.0';
+const VERSION        = '2.0.0';
 
 const IDE_TARGETS = {
   cursor: {
@@ -35,7 +35,7 @@ const IDE_TARGETS = {
   windsurf: {
     name:      'Windsurf',
     detection: ['.windsurf', '.windsurfrules'],
-    primary:   '.windsurf/rules/seo-geo-optimizer.md',
+    primary:   '.windsurf/rules/seo-geo-optimizer.mdc',
     fallback:  '.windsurfrules',
     note:      'Activates automatically in all Cascade AI sessions.'
   },
@@ -45,6 +45,20 @@ const IDE_TARGETS = {
     primary:   '.github/copilot-instructions.md',
     fallback:  null,
     note:      'Activates in all Copilot Chat sessions in VS Code.'
+  },
+  claude: {
+    name:      'Claude Code',
+    detection: ['.claude', 'CLAUDE.md'],
+    primary:   'CLAUDE.md',
+    fallback:  null,
+    note:      'Activates automatically in Claude Code CLI.'
+  },
+  trae: {
+    name:      'Trae',
+    detection: ['.trae'],
+    primary:   '.trae/rules.md',
+    fallback:  null,
+    note:      'Activates automatically in all Trae sessions.'
   },
   lovable: {
     name:      'Lovable',
@@ -63,9 +77,9 @@ const IDE_TARGETS = {
   antigravity: {
     name:      'antigravity',
     detection: ['.gemini'],
-    primary:   path.join(os.homedir(), '.gemini', 'GEMINI.md'),
-    fallback:  null,
-    note:      'Global installation - available in all projects'
+    primary:   '.gemini/GEMINI.md',
+    fallback:  path.join(os.homedir(), '.gemini', 'GEMINI.md'),
+    note:      'Project-level installation. Use --global for global install.'
   },
   generic: {
     name:      'Generic / Any AI IDE',
@@ -119,17 +133,22 @@ ${c.bold}OPTIONS${c.reset}
   ${c.cyan}--cursor${c.reset}        Install for Cursor
   ${c.cyan}--windsurf${c.reset}      Install for Windsurf
   ${c.cyan}--copilot${c.reset}       Install for GitHub Copilot (VS Code)
+  ${c.cyan}--claude${c.reset}        Install for Claude Code
+  ${c.cyan}--trae${c.reset}          Install for Trae
   ${c.cyan}--lovable${c.reset}       Install for Lovable
   ${c.cyan}--bolt${c.reset}          Install for Bolt
-  ${c.cyan}--antigravity${c.reset}   Install for Google Antigravity (Global)
+  ${c.cyan}--antigravity${c.reset}   Install for Google Antigravity
   ${c.cyan}--all${c.reset}           Install for all supported IDEs at once
+  ${c.cyan}--global${c.reset}        Force global installation (if supported by IDE)
+  ${c.cyan}--dry-run${c.reset}       Preview installation paths without writing files
+  ${c.cyan}--force${c.reset}         Overwrite existing rules without creating backups
   ${c.cyan}--help${c.reset}          Show this help
 
 ${c.bold}EXAMPLES${c.reset}
   npx seo-geo-optimizer                    # Auto-detect and install
   npx seo-geo-optimizer --cursor           # Install for Cursor only
-  npx seo-geo-optimizer --antigravity      # Install globally for Antigravity
-  npx seo-geo-optimizer --all              # Install for all IDEs
+  npx seo-geo-optimizer --antigravity --global # Install globally for Antigravity
+  npx seo-geo-optimizer --all --dry-run    # Preview installation for all IDEs
 
 ${c.bold}MANUAL INSTALL${c.reset}
   Copy the raw skill file from:
@@ -179,17 +198,26 @@ function downloadSkill(url) {
   });
 }
 
-function installToTarget(ideKey, skillContent, cwd) {
+function installToTarget(ideKey, skillContent, cwd, options) {
   const ide        = IDE_TARGETS[ideKey];
   let targetPath = ide.primary;
   
+  if (options.global && ide.fallback && ideKey === 'antigravity') {
+    targetPath = ide.fallback;
+  }
+  
   if (targetPath.includes(os.homedir())) {
     // Path already contains homedir (from path.join)
-    targetPath = ide.primary;
+    targetPath = targetPath;
   } else if (targetPath.startsWith('~')) {
     targetPath = path.join(os.homedir(), targetPath.slice(1));
   } else if (!path.isAbsolute(targetPath)) {
     targetPath = path.join(cwd, targetPath);
+  }
+
+  if (options.dryRun) {
+    log.info(`[DRY RUN] Would install ${c.bold}${ide.name}${c.reset} → ${c.green}${path.isAbsolute(targetPath) ? targetPath : path.relative(cwd, targetPath)}${c.reset}`);
+    return targetPath;
   }
 
   const targetDir  = path.dirname(targetPath);
@@ -197,7 +225,7 @@ function installToTarget(ideKey, skillContent, cwd) {
     fs.mkdirSync(targetDir, { recursive: true });
     log.step(`Created directory: ${c.gray}${targetDir}${c.reset}`);
   }
-  if (fs.existsSync(targetPath)) {
+  if (fs.existsSync(targetPath) && !options.force) {
     const backup = targetPath + '.backup';
     fs.copyFileSync(targetPath, backup);
     log.warn(`Existing file backed up → ${c.gray}${path.relative(cwd, backup)}${c.reset}`);
@@ -227,9 +255,15 @@ async function main() {
   log.divider();
 
   let targets = [];
+  const options = {
+    dryRun: args.includes('--dry-run'),
+    force: args.includes('--force'),
+    global: args.includes('--global'),
+    project: args.includes('--project')
+  };
 
   if (args.includes('--all')) {
-    targets = ['cursor', 'windsurf', 'copilot', 'lovable', 'bolt', 'antigravity'];
+    targets = ['cursor', 'windsurf', 'copilot', 'claude', 'trae', 'lovable', 'bolt', 'antigravity'];
     log.title('Installing for ALL supported IDEs');
   } else if (args.includes('--cursor')) {
     targets = ['cursor'];
@@ -240,6 +274,12 @@ async function main() {
   } else if (args.includes('--copilot')) {
     targets = ['copilot'];
     log.title('Installing for GitHub Copilot');
+  } else if (args.includes('--claude')) {
+    targets = ['claude'];
+    log.title('Installing for Claude Code');
+  } else if (args.includes('--trae')) {
+    targets = ['trae'];
+    log.title('Installing for Trae');
   } else if (args.includes('--lovable')) {
     targets = ['lovable'];
     log.title('Installing for Lovable');
@@ -248,10 +288,15 @@ async function main() {
     log.title('Installing for Bolt');
   } else if (args.includes('--antigravity')) {
     targets = ['antigravity'];
-    log.title('Installing for Google Antigravity');
+    log.title(`Installing for Google Antigravity (${options.global ? 'Global' : 'Project-level'})`);
   } else {
     log.title('Auto-detecting your IDE...');
     targets = detectIDE(cwd);
+    
+    if (targets.length === 0 && (fs.existsSync(path.join(cwd, 'package.json')) || fs.existsSync(path.join(cwd, 'index.html')))) {
+       log.warn('No IDE config files detected, but found a project structure.');
+    }
+
     if (targets.length > 0) {
       log.success(`Detected: ${targets.map(t => IDE_TARGETS[t].name).join(', ')}`);
     } else {
@@ -285,8 +330,9 @@ async function main() {
 
   for (const ideKey of targets) {
     try {
-      const filePath = installToTarget(ideKey, skillContent, cwd);
-      const displayPath = path.isAbsolute(IDE_TARGETS[ideKey].primary) ? filePath : path.relative(cwd, filePath);
+      const filePath = installToTarget(ideKey, skillContent, cwd, options);
+      if (options.dryRun) continue;
+      const displayPath = path.isAbsolute(filePath) ? filePath : path.relative(cwd, filePath);
       installed.push({ ide: IDE_TARGETS[ideKey].name, path: displayPath });
       log.blank();
     } catch (err) {
@@ -294,6 +340,11 @@ async function main() {
       failed.push(IDE_TARGETS[ideKey].name);
       if (ideKey === 'antigravity') process.exit(1);
     }
+  }
+
+  if (options.dryRun) {
+    log.title('✅  Dry run complete. No files were written.');
+    process.exit(0);
   }
 
   log.divider();
@@ -317,10 +368,10 @@ async function main() {
   }
 
   console.log(`${c.bold}Next step — tell your AI:${c.reset}`);
-  console.log(`  ${c.yellow}"Read and activate the SEO & GEO Optimizer skill, then start the process."${c.reset}`);
+  console.log(`  ${c.yellow}"/seo"${c.reset} or ${c.yellow}"run seo-geo-optimizer"${c.reset}`);
   log.blank();
   console.log(`${c.gray}Your AI will then:${c.reset}`);
-  console.log(`  ${c.gray}1. Read the full skill file and confirm${c.reset}`);
+  console.log(`  ${c.gray}1. Activate from PASSIVE MODE${c.reset}`);
   console.log(`  ${c.gray}2. Ask all 40 intake questions${c.reset}`);
   console.log(`  ${c.gray}3. Run competitor analysis (3–5 real SEO competitors)${c.reset}`);
   console.log(`  ${c.gray}4. Build your Execution Plan Report — waits for approval${c.reset}`);

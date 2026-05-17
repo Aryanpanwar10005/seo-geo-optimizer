@@ -46,6 +46,11 @@ Open your terminal inside your project folder and run:
 
 That's it. The installer auto-detects your IDE and places the skill in the right directory.
 
+### Trigger the Skill
+
+Once installed, the skill stays dormant in **PASSIVE MODE**. To activate it, open your AI chat and type:
+`/seo` or `run seo-geo-optimizer`
+
 ### Or copy-paste manually — no terminal needed
 
 Choose your IDE below and follow the 2-step instructions.
@@ -68,13 +73,13 @@ The skill activates automatically in all Cursor AI and Composer sessions.
 
 #### Windsurf
 
-**Step 1** — Create the file `.windsurf/rules/seo-geo-optimizer.md` in your project root.
+**Step 1** — Create the file `.windsurf/rules/seo-geo-optimizer.mdc` in your project root.
 **Step 2** — Paste the full contents of `skill/SEO_GEO_SKILL.md` into it.
 
 ```bash
 # Or via terminal
 mkdir -p .windsurf/rules
-curl -o .windsurf/rules/seo-geo-optimizer.md \
+curl -o .windsurf/rules/seo-geo-optimizer.mdc \
   https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md
 ```
 
@@ -93,6 +98,20 @@ curl -o .github/copilot-instructions.md \
 ```
 
 The skill activates automatically in all Copilot Chat sessions inside VS Code.
+
+#### Claude Code
+
+**Step 1** — Create the file `CLAUDE.md` in your project root.
+**Step 2** — Paste the full contents of `skill/SEO_GEO_SKILL.md` into it.
+
+Alternatively, run `npx seo-geo-optimizer --claude` to auto-install.
+
+#### Trae
+
+**Step 1** — Create the file `.trae/rules.md` in your project root.
+**Step 2** — Paste the full contents of `skill/SEO_GEO_SKILL.md` into it.
+
+Alternatively, run `npx seo-geo-optimizer --trae` to auto-install.
 
 #### Replit
 
@@ -122,22 +141,32 @@ Alternatively, run `npx seo-geo-optimizer --bolt` to auto-install into `.bolt/pr
 
 #### Antigravity (Google IDE)
 
-Global Installation — Works across all projects automatically.
-**Step 1** — Create the global rules directory:
+**Step 1** — Create the project-level rules directory:
+
+```bash
+mkdir -p .gemini
+```
+
+**Step 2** — Install the skill for the project:
+
+```bash
+curl -o .gemini/GEMINI.md \
+  https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md
+```
+
+**Global Installation (Alternative)**
+If you want the skill to run across all projects automatically:
 
 ```bash
 mkdir -p ~/.gemini
-```
-
-**Step 2** — Install the skill globally:
-
-```bash
 curl -o ~/.gemini/GEMINI.md \
   https://raw.githubusercontent.com/Aryanpanwar10005/seo-geo-optimizer/main/skill/SEO_GEO_SKILL.md
 ```
 
-Alternatively, run `npx seo-geo-optimizer --antigravity` to auto-install globally.
-The skill activates automatically in all Antigravity sessions across every project.
+> **⚠️ WARNING:** This will overwrite any existing `~/.gemini/GEMINI.md`. Please back it up first, or set `GEMINI_CLI_HOME` to isolate your Gemini home directory.
+
+Alternatively, run `npx seo-geo-optimizer --antigravity --global` to auto-install globally.
+The skill activates automatically in all Antigravity sessions.
 
 #### Any other AI IDE or assistant
 
@@ -235,13 +264,15 @@ Every task the IDE performs is governed by 16 non-negotiable rules, all verified
 
 | IDE            | Status          | Auto-Install Path                      |
 | -------------- | --------------- | -------------------------------------- |
-| Cursor         | ✅ Full Support | `.cursor/rules/seo-geo-optimizer.md`   |
-| Windsurf       | ✅ Full Support | `.windsurf/rules/seo-geo-optimizer.md` |
+| Cursor         | ✅ Full Support | `.cursor/rules/seo-geo-optimizer.mdc`  |
+| Windsurf       | ✅ Full Support | `.windsurf/rules/seo-geo-optimizer.mdc`|
 | GitHub Copilot | ✅ Full Support | `.github/copilot-instructions.md`      |
+| Claude Code    | ✅ Full Support | `CLAUDE.md`                            |
+| Trae           | ✅ Full Support | `.trae/rules.md`                       |
 | Bolt.new       | ✅ Full Support | `.bolt/prompt`                         |
 | Lovable        | ✅ Full Support | `AGENTS.md`                            |
 | Replit         | ✅ Full Support | `.replit/agent/instructions.md`        |
-| Claude Code    | ✅ Full Support | `CLAUDE.md`                            |
+| Antigravity    | ✅ Full Support | `.gemini/GEMINI.md`                    |
 
 If your IDE isn't listed, place the skill content in your IDE's system prompt or instructions file.
 
@@ -377,7 +408,7 @@ seo-geo-optimizer/
 │   └── workflows/
 │       ├── publish.yml         ← Auto-publish to npm on release
 │       └── validate.yml        ← Validate skill + JSON on every push
-├── package.json                ← npm package config (v1.2.0)
+├── package.json                ← npm package config (v2.0.0)
 ├── seo-geo-prompt.json         ← Machine-readable skill schema
 └── README.md                   ← This file
 ```
@@ -391,18 +422,20 @@ Copy the contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md)
 
 **2. Place it in your IDE's rules folder**
 
-| IDE            | Path                                   |
-| -------------- | -------------------------------------- |
-| Cursor         | `.cursor/rules/seo-geo-optimizer.md`   |
-| Windsurf       | `.windsurf/rules/seo-geo-optimizer.md` |
-| GitHub Copilot | `.github/copilot-instructions.md`      |
-| Bolt.new       | `.bolt/prompt`                         |
-| Lovable        | `AGENTS.md`                            |
-| Replit         | `.replit/agent/instructions.md`        |
-| Claude Code    | `CLAUDE.md`                            |
+| IDE            | Path                                    |
+| -------------- | --------------------------------------- |
+| Cursor         | `.cursor/rules/seo-geo-optimizer.mdc`   |
+| Windsurf       | `.windsurf/rules/seo-geo-optimizer.mdc` |
+| GitHub Copilot | `.github/copilot-instructions.md`       |
+| Claude Code    | `CLAUDE.md`                             |
+| Trae           | `.trae/rules.md`                        |
+| Bolt.new       | `.bolt/prompt`                          |
+| Lovable        | `AGENTS.md`                             |
+| Replit         | `.replit/agent/instructions.md`         |
+| Antigravity    | `.gemini/GEMINI.md`                     |
 
 **3. Activate in your IDE**
-Open your AI chat and type: `Start seo-geo-optimizer`
+Open your AI chat and type: `/seo` or `run seo-geo-optimizer`
 
 ## 🤝 Contributing
 
