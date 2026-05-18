@@ -70,7 +70,7 @@ grep -E "name: '[a-z]+'" bin/install.js | sort | uniq -d
 echo "=== FINAL VALIDATION REPORT ==="
 echo ""
 echo "1. bin/install.js antigravity entry:"
-grep -A 4 "name: 'antigravity'" bin/install.js || echo "❌ NOT FOUND"
+node bin/validate-install.js
 echo ""
 echo "2. package.json keywords:"
 grep -q "antigravity" package.json && echo "✓ Found" || echo "⚠️  NOT FOUND (optional)"
