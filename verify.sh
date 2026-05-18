@@ -13,7 +13,7 @@ echo "=== Searching for 'antigravity' in install.js ==="
 grep -n "antigravity" bin/install.js
 
 echo "=== Showing IDE array (should contain antigravity entry) ==="
-grep -A 100 "const ides" bin/install.js | head -120
+grep -A 100 "const IDE_TARGETS" bin/install.js | head -120
 
 echo "=== Checking required Node.js imports ==="
 head -20 bin/install.js | grep -E "(require\('path'\)|require\('os'\)|require\('fs'\))"
