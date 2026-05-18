@@ -24,6 +24,7 @@ jobs:
             echo "Error: package.json version ($PKG_VERSION) does not match git tag ($GIT_TAG)"
             exit 1
           fi
+      # NPM_TOKEN must be added as a repository secret in GitHub → Settings → Secrets
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Required secret: set NPM_TOKEN in repo settings
