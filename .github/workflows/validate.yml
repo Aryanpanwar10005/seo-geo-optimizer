@@ -126,6 +126,9 @@ jobs:
           cp skill/SEO_GEO_SKILL.md ~/.gemini/GEMINI.md
           test -f ~/.gemini/GEMINI.md && echo "✓ Antigravity install works"
 
+      - name: Run robust integration validation
+        run: node bin/validate-install.js
+
       - name: All checks passed
         run: |
           echo ""

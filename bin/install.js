@@ -382,7 +382,16 @@ async function main() {
   log.blank();
 }
 
-main().catch(err => {
-  log.error(`Unexpected error: ${err.message}`);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    log.error(`Unexpected error: ${err.message}`);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  detectIDE,
+  installToTarget,
+  main,
+  IDE_TARGETS
+};
