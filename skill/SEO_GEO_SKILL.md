@@ -349,6 +349,16 @@ List the top 3–5 most urgent issues found. Each finding must state:
 
 ---
 
+#### TIER 4 — GEO & AI Visibility _(Week 3–4)_
+
+| ID   | Action | Why | Official Reference |
+| ---- | ------ | --- | ------------------ |
+| T4-1 | Restructure intro paragraphs: lead with the direct answer (inverted pyramid) in the first 40–60 words | Increases featured snippet eligibility + AI extraction reliability | [Google: Snippets](https://developers.google.com/search/docs/appearance/featured-snippets) |
+| T4-2 | Optimize content density: ensure at least one cited statistic per 200 words | Essential authority and EEAT signal for Perplexity and Gemini engines | [E-E-A-T Guidelines](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) |
+| T4-3 | Configure `llms.txt` at site root pointing to key markdown briefs | Declare clean indexing entrypoints optimized directly for LLMs | [LLMs.txt Spec](https://llmstxt.org) |
+| T4-4 | Allow PerplexityBot, GPTBot, and ClaudeBot in `robots.txt` | Ensure AI crawlers have full indexing permissions | [AI Bot Directives](https://platform.openai.com/docs/gptbot) |
+| T4-5 | Format headings as direct questions or statements (>4 words) | Direct alignment with exact queries typed into Generative Engines | [Google: Helpful Content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) |
+| T4-6 | Implement sameAs entity linking to Wikidata / Wikipedia profiles | Explicit identity linking for Knowledge Graph ingestion | [schema.org/sameAs](https://schema.org/sameAs) |
 | T4-7 | Add `SoftwareApplication` JSON-LD schema for SaaS/app products: applicationCategory, operatingSystem, offers (pricing) | App-specific rich results + AI product citation | [schema.org/SoftwareApplication](https://schema.org/SoftwareApplication) |
 
 ---
