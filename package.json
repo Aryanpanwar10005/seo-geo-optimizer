@@ -1,13 +1,15 @@
 {
   "name": "seo-geo-optimizer",
-  "version": "2.0.0",
-  "description": "Universal SEO & GEO skill for AI IDEs — Google, Bing, AI Overviews, Bing Copilot, ChatGPT, Perplexity. Works with Cursor, Windsurf, GitHub Copilot, Replit, Lovable, Bolt, and any AI assistant.",
+  "version": "2.1.0",
+  "description": "SEO and GEO skill for AI coding agents (Claude Code, Codex, Cursor, GitHub Copilot, Windsurf, Antigravity and more). Guides your agent through technical SEO, structured data and AI-search visibility for Google, Bing, ChatGPT and Perplexity.",
   "bin": {
     "seo-geo-optimizer": "./bin/install.js"
   },
   "scripts": {
     "start": "node bin/install.js",
-    "test": "jest"
+    "test": "jest",
+    "validate": "node scripts/validate.js",
+    "sync:skill": "node scripts/sync-skill.js"
   },
   "keywords": [
     "seo",
@@ -21,12 +23,10 @@
     "bolt",
     "replit",
     "antigravity",
-    "google-ide",
     "skill",
     "ai-optimizer",
     "ai-rules",
     "cursor-rules",
-    "windsurfrules",
     "schema",
     "schema-markup",
     "json-ld",
@@ -42,11 +42,16 @@
     "ai-skill",
     "trae",
     "claude-code",
-    "mdc"
+    "agent-skills",
+    "claude-skills",
+    "skills",
+    "codex",
+    "ai-agents",
+    "geo-optimization"
   ],
   "author": {
     "name": "Aryan Panwar",
-    "url": "https://github.com/Aryanpanwar10005"
+    "url": "https://aryanpanwar.in"
   },
   "license": "MIT",
   "repository": {
@@ -56,13 +61,14 @@
   "bugs": {
     "url": "https://github.com/Aryanpanwar10005/seo-geo-optimizer/issues"
   },
-  "homepage": "https://github.com/Aryanpanwar10005/seo-geo-optimizer#readme",
+  "homepage": "https://aryanpanwar.in/case-studies/seo-geo-optimizer",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=16.7.0"
   },
   "files": [
     "bin/install.js",
     "skill/",
+    "skills/",
     "seo-geo-prompt.json",
     "README.md",
     "CONTRIBUTING.md",

@@ -15,10 +15,12 @@ The most useful contributions are:
 - A reference URL broke or redirected — update it with the current URL
 - A new schema type is now supported in Google Rich Results
 
+After editing `skill/SEO_GEO_SKILL.md`, run `npm run sync:skill`. It regenerates the Agent Skills edition in `skills/seo-geo-optimizer/` (SKILL.md plus one reference file per part). Never edit those generated files by hand; CI fails if they are out of date.
+
 **Installer improvements** (`bin/install.js`)
-- A new AI IDE emerged that has a known rules file path
-- An existing IDE changed where it reads its rules file
-- A bug in the auto-detection logic
+- A tool added Agent Skills support, or changed the folder it loads skills from (link its official docs)
+- A bug in detection, install, update or uninstall
+- The installer must only write skill folders. Changes that write to shared files (CLAUDE.md, AGENTS.md, copilot-instructions.md, GEMINI.md and similar) will not be accepted.
 
 **README improvements**
 - A manual install step for an IDE changed
@@ -31,7 +33,7 @@ The most useful contributions are:
 - Generic SEO advice without an official source URL
 - Recommendations based on personal experience only — all claims must cite Google Search Central, Bing Webmaster Guidelines, or schema.org
 - Changes that remove official citation links from the skill file
-- New IDE targets added without a verified install path (test it yourself first)
+- New tool targets added without a documented skills folder (link the docs and test it yourself first)
 
 ---
 
@@ -39,7 +41,7 @@ The most useful contributions are:
 
 1. Fork this repository
 2. Create a branch: `git checkout -b fix/bing-guidelines-update`
-3. Make your change
+3. Make your change, then run `npm run sync:skill` (if you touched the skill), `npm run validate` and `npm test`
 4. In your PR description, include:
    - What changed and why
    - The official source URL confirming the change (required for skill file updates)
@@ -66,9 +68,11 @@ If you add a recommendation without a citation link, it will not be merged. This
 
 Good example:
 ```
-**Title tag optimal length:** 50–60 characters
+**Title links:** Google sets no character limit for title elements; long titles may be truncated in results. Write descriptive, concise titles that are unique to each page.
 Source: https://developers.google.com/search/docs/appearance/title-link
 ```
+
+Fixed character counts, keyword densities or word-count minimums presented as Google rules will not be merged, because Google does not publish such rules.
 
 ---
 
@@ -78,4 +82,4 @@ Open an issue. Label it `question` and describe what you're unsure about.
 
 ---
 
-Built by [Aryan Panwar](https://github.com/Aryanpanwar10005)
+Built by [Aryan Panwar](https://aryanpanwar.in)
