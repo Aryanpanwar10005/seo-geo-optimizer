@@ -1,8 +1,8 @@
 <!-- Part 3 of the seo-geo-optimizer skill. Generated from skill/SEO_GEO_SKILL.md by scripts/sync-skill.js. Edit that file, then run npm run sync:skill. -->
 
-## PART 3 — INTAKE QUESTIONNAIRE (ALL 40 QUESTIONS)
+## PART 3 — INTAKE QUESTIONNAIRE (ALL 32 QUESTIONS)
 
-Tell the user: _"Before I can build your SEO & GEO strategy, I need to understand your product deeply. I have 40 questions across 5 groups. Every question matters — this is what separates tailored strategy from generic advice."_
+Tell the user: _"Before I can build your SEO & GEO strategy, I need to understand your product deeply. I have 32 questions across 5 groups. Every question matters — this is what separates tailored strategy from generic advice."_
 
 Ask all questions in groups. Document every answer. If the user skips a question, state the default assumption you will use and ask for explicit confirmation.
 
@@ -57,8 +57,8 @@ Ask all questions in groups. Document every answer. If the user skips a question
 
 | ID  | Question                                                                                                   |
 | --- | ---------------------------------------------------------------------------------------------------------- |
-| E1  | Do you want to appear in Google AI Overviews (the AI-generated answer boxes at the top of Google results)? |
-| E2  | Do you want to be cited by Bing Copilot, ChatGPT, Perplexity, or other AI answer engines?                  |
+| E1  | Do you want to appear in Google AI Overviews and AI Mode (the AI-generated answers in Google Search)?       |
+| E2  | Do you want to be cited by Microsoft Copilot, ChatGPT, Perplexity, or other AI answer engines?             |
 | E3  | Does existing content include instructional/how-to material, FAQ sections, or Q&A content?                 |
 | E4  | Is any structured data (schema markup) currently on the site? If yes, which types?                         |
 | E5  | Is the brand currently mentioned or cited on other authoritative websites? Which ones?                     |

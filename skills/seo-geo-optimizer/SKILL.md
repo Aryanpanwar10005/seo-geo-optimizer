@@ -1,6 +1,6 @@
 ---
 name: seo-geo-optimizer
-description: "Full SEO and GEO (generative engine optimization) workflow for a website or web app: technical SEO, meta tags, JSON-LD structured data, Core Web Vitals, sitemaps, robots.txt and AI crawler access, content and blog SEO, and visibility in Google, Bing, AI Overviews, Copilot, ChatGPT and Perplexity. Use when the user asks for an SEO or GEO audit, wants better search rankings or more AI-search citations, or invokes seo-geo-optimizer. Answer one-off SEO questions directly; start the guided workflow (intake questions, competitor analysis, an approval gate, then tiered execution) only when the user asks to run seo-geo-optimizer."
+description: "SEO and GEO (generative engine optimization) for websites and web apps: technical SEO, meta tags, structured data, Core Web Vitals, sitemaps, robots.txt and AI crawlers, content SEO, and visibility in Google (including AI Overviews and AI Mode), Bing and Copilot, ChatGPT search and Perplexity. Use it for any SEO or GEO question about a site, so answers follow its myth list and official sources, and for full audits. One-off questions get a direct answer. The guided workflow (intake questions, competitor analysis, an approval gate, then tiered execution) starts only when the user asks to run seo-geo-optimizer."
 license: MIT
 metadata:
   author: Aryan Panwar
@@ -19,34 +19,36 @@ metadata:
 # SEO & GEO OPTIMIZER — Universal AI Skill
 
 > **⚠️ ALWAYS READ THIS FILE, BUT THIS SKILL IS IN PASSIVE MODE BY DEFAULT.**
-> You must ALWAYS read this entire skill file, but do NOT execute PHASE 0 (the workflow) unless the user explicitly types `/seo` or `run seo-geo-optimizer`. 
-> Treat "ambiguous" triggers as any user message that mentions SEO/geo concepts without the exact commands `/seo` or `run seo-geo-optimizer`. In those cases, answer the user's question rather than run the workflow.
-> Instead of a confirmation loop for ambiguous triggers, ask a single clarifying prompt: "Do you want to run the full SEO-GEO optimizer? If yes, please send `/seo` to start." Sending `/seo` is treated as a new explicit trigger that directly starts PHASE 0.
+> Read this entire skill file whenever it is loaded, but do NOT start the workflow (PHASE 0) unless the user explicitly asks to run it: `/seo`, `/seo-geo-optimizer`, `$seo-geo-optimizer`, `@seo-geo-optimizer`, or the phrase `run seo-geo-optimizer`.
+> In tools with skills support the command is the skill name: `/seo-geo-optimizer` in Claude Code, `$seo-geo-optimizer` in Codex.
+> Any other message about SEO or GEO is an ordinary question: answer it directly, using the rules and sources in this file. Do not start the intake.
+> If the user seems to want the full workflow but has not asked for it, ask once: "Do you want to run the full SEO-GEO optimizer? If yes, send `/seo-geo-optimizer` (or `run seo-geo-optimizer`) to start." Do not loop. An explicit trigger starts PHASE 0 directly.
 
-**Purpose:** Transform any web product from unranked to fully visible across Google, Bing, Google AI Overviews, Bing Copilot, ChatGPT, and Perplexity. Covers technical SEO, on-page optimization, schema markup, Core Web Vitals, competitor analysis, content strategy, and Generative Engine Optimization (GEO) for AI search engines.
+**Purpose:** Take any web product from unranked to visible across Google Search (including AI Overviews and AI Mode), Bing and Microsoft Copilot, ChatGPT search and Perplexity. Covers technical SEO, on-page optimization, structured data, Core Web Vitals, competitor analysis, content strategy, and Generative Engine Optimization (GEO). In this skill, GEO means only what the engines document: indexable, crawlable, genuinely useful content, clear entities, and correct crawler and preview controls.
 
-**Compatible with:** Cursor · Windsurf · Lovable · Bolt · GitHub Copilot · Replit · VS Code · Any AI assistant
+**Compatible with:** Claude Code · Codex · Cursor · GitHub Copilot · Windsurf / Devin · Antigravity · Gemini CLI · Zed · Junie · Replit · Cline · Kiro · Trae · Lovable · Bolt · any AI assistant that accepts custom instructions
 
-**Verified against:**
+**Verified against (17 Oct 2026):**
 
-- Google Search Central — December 2025
-- Bing Webmaster Guidelines — 2025
-- Google June 2025 Core Update
-- Core Web Vitals spec — March 2024 (INP replaces FID — all FID references are outdated)
+- Google Search Central documentation and changelog, including "Optimizing your website for generative AI features" (May 2026, updated 10 Jul 2026) and the FAQ rich result removal (May 2026)
+- Google ranking updates through the May 2026 core update and the September 2026 spam update
+- Bing Webmaster Guidelines (February 2026 rewrite covering Copilot and grounding) and Bing's sitemap and IndexNow guidance (July 2025)
+- Core Web Vitals (web.dev, updated 31 Oct 2024): LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1 at the 75th percentile. INP replaced FID in March 2024.
+- Search Quality Rater Guidelines, 11 Sep 2025 version
+- AI crawler documentation from OpenAI, Anthropic, Perplexity, Google and Apple, as of October 2026
 
 ---
 
 ## HOW TO USE THIS SKILL
 
-**In Cursor:** Place this file at `.cursor/rules/seo-geo-optimizer.mdc` OR paste contents into `.cursorrules`
+**Install as an Agent Skill (recommended):**
 
-**In Windsurf:** Place at `.windsurf/rules/seo-geo-optimizer.md` OR paste into `.windsurfrules`
+- `npx seo-geo-optimizer` installs the skill folder into `.agents/skills/seo-geo-optimizer/`, which Codex, Cursor, GitHub Copilot, Antigravity, Gemini CLI, Windsurf / Devin, Zed, Junie and Replit read. It also installs into `.claude/skills/` for Claude Code when it detects Claude Code (add `--claude` to make sure). Run `npx seo-geo-optimizer --help` for global installs and other tools.
+- Or use the skills CLI: `npx skills add Aryanpanwar10005/seo-geo-optimizer`
 
-**In GitHub Copilot (VS Code):** Place at `.github/copilot-instructions.md`
+**Tools without skills support (Lovable, Bolt, chat assistants):** paste this single file into the tool's custom instructions or system prompt.
 
-**In Lovable / Bolt / Replit:** Paste the full contents into the system prompt or custom instructions field
-
-**Activation trigger:** The user must explicitly type the command `/seo` or the phrase `run seo-geo-optimizer` to activate this skill.
+**Activation:** the workflow starts only on an explicit request: `/seo`, `/seo-geo-optimizer`, `$seo-geo-optimizer`, `@seo-geo-optimizer`, or `run seo-geo-optimizer`. Everything else gets a direct answer.
 
 ---
 
@@ -61,7 +63,7 @@ Read this entire skill file completely before taking any action whatsoever. No p
 Every piece of information about the product, audience, goals, tech stack, and competitors must come from the user — never inferred, guessed, or assumed. If any information is missing or unclear, STOP and ask. No exceptions.
 
 **LAW 3 — COLLECT ALL DATA FIRST**
-Complete the full 40-question intake questionnaire AND the full competitor analysis before generating any plan or any output. Do not start planning on partial data.
+Complete the full 32-question intake questionnaire AND the full competitor analysis before generating any plan or any output. Do not start planning on partial data.
 
 **LAW 4 — PLAN BEFORE EXECUTING**
 Always generate the full Execution Plan Report (EPR) and get explicit written approval from the user before writing a single line of code, configuration, markup, or content.
@@ -70,7 +72,7 @@ Always generate the full Execution Plan Report (EPR) and get explicit written ap
 Never make any change — not a "small fix", not a "quick patch", not an "obvious improvement" — without explicit user approval for that exact specific change. Every change is a decision. The human makes it.
 
 **LAW 6 — CITE EVERY RECOMMENDATION**
-Every SEO or GEO recommendation must include the official source URL. No recommendation without a citation. See the Official References Index at the bottom of this file.
+Every SEO or GEO recommendation must include an official source URL that actually supports it. Label rules of thumb as **heuristics**. Never invent statistics or "ranking factors". See the Official References Index (Part 13).
 
 **LAW 7 — ONE PHASE AT A TIME**
 After completing each phase, STOP completely. Report results to the user. Ask for explicit approval to continue. Never chain phases without confirmation.
@@ -87,6 +89,27 @@ If a workaround or temporary patch is applied at the user's request, label it ex
 - "While I was at it..."
 - "I assumed you'd want..."
 
+### Myths this skill refuses
+
+Never recommend these. If the user asks for one, explain what the official source says.
+
+| Myth | What the official source says | Source |
+| ---- | ----------------------------- | ------ |
+| Meta keywords help rankings | Google Search doesn't use the keywords meta tag. | https://developers.google.com/search/docs/fundamentals/seo-starter-guide |
+| Titles must be 50–60 characters, descriptions 150–160 | There is no length limit. Google truncates to fit the device and may rewrite both. | https://developers.google.com/search/docs/appearance/title-link · https://developers.google.com/search/docs/appearance/snippet |
+| Hit a keyword density or repeat the exact phrase | Keyword stuffing violates Google's spam policies. Google understands synonyms and intent. | https://developers.google.com/search/docs/essentials/spam-policies |
+| Pages need a minimum word count | "There's no magical word count target, minimum or maximum." | https://developers.google.com/search/docs/fundamentals/seo-starter-guide |
+| E-E-A-T is a ranking factor | "Thinking E-E-A-T is a ranking factor: No, it's not." | https://developers.google.com/search/docs/fundamentals/seo-starter-guide |
+| Structured data boosts rankings or is needed for AI Overviews | It makes pages eligible for rich results. AI features need no special schema. | https://developers.google.com/search/docs/fundamentals/ai-optimization-guide |
+| FAQ or HowTo markup wins rich results | Google dropped HowTo rich results in 2023 and FAQ rich results in May 2026. | https://developers.google.com/search/updates#faq-deprecation |
+| llms.txt helps Google or AI Overviews | Google Search ignores llms.txt. It neither helps nor harms. | https://developers.google.com/search/docs/fundamentals/ai-optimization-guide |
+| "Chunk" content or write a special way for AI | There's no need to split content into small pieces or rewrite it for generative AI search. | https://developers.google.com/search/docs/fundamentals/ai-optimization-guide |
+| Sitemap `<priority>` and `<changefreq>` matter | Google ignores both. So does Bing. | https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap · https://blogs.bing.com/webmaster/2025/7/Keeping-Content-Discoverable-with-Sitemaps-in-AI-Powered-Search/ |
+| Changing dates makes content "fresh" | Google lists changing dates without substantial changes as a warning sign. | https://developers.google.com/search/docs/fundamentals/creating-helpful-content |
+| Heading order or count is a ranking signal | Order doesn't matter to Google Search and there's no ideal number. Keep order for accessibility. | https://developers.google.com/search/docs/fundamentals/seo-starter-guide |
+| Keep internal links under 100 per page | "There's no magical ideal number of links a given page should contain." | https://developers.google.com/search/docs/crawling-indexing/links-crawlable |
+| Social shares are a Bing (or Google) ranking factor | Neither engine documents social signals as a ranking factor. | https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a |
+
 ---
 
 ## PART 2 — SEO & GEO EXECUTION PHASES
@@ -95,10 +118,10 @@ Follow this exact sequence every engagement. No skipping. No reordering. Update 
 
 ```
 PHASE 0  → Initialize the intake questionnaire — confirm before proceeding
-PHASE 1  → Complete all 40 intake questions (Part 3)
-PHASE 2  → SEO Competitor analysis (3–5 real SEO competitors — Part 4)
-PHASE 3  → Keyword & Opportunity Gap Assessment
-PHASE 4  → Generate Execution Plan Report (EPR) → GET WRITTEN APPROVAL → then stop
+PHASE 1  → Complete all 32 intake questions (Part 3)
+PHASE 2  → SEO competitor analysis (3–5 real SEO competitors — Part 4, Steps 1–3)
+PHASE 3  → Keyword & Opportunity Gap Assessment (Part 4, Step 4)
+PHASE 4  → Generate Execution Plan Report (EPR — Part 5) → GET WRITTEN APPROVAL → then stop
 PHASE 5  → Execute Tier 1 only (Critical Foundation) → verify → report → ask to proceed
 PHASE 6  → Execute Tier 2 only (Performance & On-Page) → verify → report → ask to proceed
 PHASE 7  → Execute Tier 3 only (Content & Authority) → verify → report → ask to proceed
@@ -108,7 +131,7 @@ PHASE 10 → Final verification checklist (all tools, pass/fail for every item �
 PHASE 11 → Maintenance monitoring setup (Part 11)
 PHASE 12 → Timeline & Maintenance Schedule (Part 12)
 PHASE 13 → Official Reference Handover (Part 13)
-PHASE 14 → Skill Completion & Final Audit REPORT
+PHASE 14 → Final Audit Report (template at the end of Part 10)
 ```
 
 ### [ ] Phase 1 to 14 Completion State
@@ -130,11 +153,11 @@ PHASE 14 → Skill Completion & Final Audit REPORT
 
 ### Phase 0 — Initialize
 
-Only execute Phase 0 if the explicit trigger command (`/seo` or `run seo-geo-optimizer`) was used. If the trigger is ambiguous, ask the user a single clarifying prompt: "Do you want to run the full SEO-GEO optimizer? If yes, please send `/seo` to start." (Do not loop; wait for the explicit trigger).
+Only execute Phase 0 after an explicit trigger: `/seo`, `/seo-geo-optimizer`, `$seo-geo-optimizer`, `@seo-geo-optimizer`, or the phrase `run seo-geo-optimizer`. In skill-capable tools the command is the skill name (`/seo-geo-optimizer` in Claude Code, `$seo-geo-optimizer` in Codex). Ordinary SEO or GEO questions get a direct answer, not the workflow. If the user seems to want the full workflow but hasn't asked for it, ask once: "Do you want to run the full SEO-GEO optimizer? If yes, send `/seo-geo-optimizer` (or `run seo-geo-optimizer`) to start." Do not loop; wait for the explicit trigger.
 
 If the explicit trigger is received, start the intake questionnaire by saying to the user:
 
-> "Before I build your strategy, I need to ask 40 questions across 5 groups. This takes about 10–15 minutes but ensures every recommendation is built specifically for your product — not generic advice. Ready to begin?"
+> "Before I build your strategy, I need to ask 32 questions across 5 groups. This takes about 10–15 minutes but ensures every recommendation is built specifically for your product — not generic advice. Ready to begin?"
 
 ### Phase 4 — Critical Stop
 
@@ -149,7 +172,7 @@ Do NOT proceed until you receive explicit written approval. Silence is not appro
 Use this exact format before making ANY change:
 
 1. **WHAT** — State exactly what will change. File name, current value → new value.
-2. **WHY** — Explain why this helps ranking. Include official reference URL.
+2. **WHY** — Explain why this helps visibility. Include the official reference URL.
 3. **SHOW** — Show the exact before/after diff.
 4. **RISK** — State any risk, side effect, or dependency.
 5. **ASK** — "Do you approve this change? (yes / no / modify)"
@@ -162,7 +185,7 @@ Use this exact format before making ANY change:
 
 | Part | File | Read it before |
 |---|---|---|
-| 3. Intake Questionnaire (All 40 Questions) | [references/03-intake-questionnaire.md](references/03-intake-questionnaire.md) | Phase 1 |
+| 3. Intake Questionnaire (All 32 Questions) | [references/03-intake-questionnaire.md](references/03-intake-questionnaire.md) | Phase 1 |
 | 4. Competitor Analysis Framework | [references/04-competitor-analysis.md](references/04-competitor-analysis.md) | Phases 2-3 |
 | 5. Execution Plan Report (EPR) Template | [references/05-execution-plan-report.md](references/05-execution-plan-report.md) | Phase 4, and the tier task lists for Phases 5-9 |
 | 6. Schema JSON-LD Templates | [references/06-schema-templates.md](references/06-schema-templates.md) | Any phase that adds or fixes structured data |

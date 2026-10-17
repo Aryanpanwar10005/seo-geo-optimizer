@@ -2,19 +2,21 @@
 
 ## PART 9 — GOOGLE vs. BING DIFFERENCES
 
-Never treat Google and Bing as the same search engine. Handle both explicitly.
+Never treat Google and Bing as the same search engine. Handle both explicitly. This table lists only documented differences.
 
-| Factor                 | Google                                                           | Bing                                                                                                 |
-| ---------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Keyword matching       | Semantic + intent-based. Understands synonyms and related terms. | **Exact-match preferred.** Use the exact keyword phrase verbatim in title, H1, URL, first paragraph. |
-| Social signals         | Not officially used as ranking signals                           | **Explicitly used.** Facebook shares, LinkedIn engagement, X reposts directly boost ranking.         |
-| JavaScript rendering   | Excellent — handles complex SPAs, multi-pass rendering           | **WEAK.** Client-side-only React/Vue/Angular is often invisible to Bingbot. SSR or SSG required.     |
-| Indexing priority      | **Mobile-first.** Desktop is secondary.                          | Desktop-first. Both versions must be optimized.                                                      |
-| Meta description usage | Often rewrites to match the specific query                       | Uses your written description mostly as-is. Write carefully.                                         |
-| Domain age             | Content quality can overcome a new domain                        | Older, established domains receive more inherent trust.                                              |
-| Backlink weighting     | Quality + topical relevance                                      | **Extra weight for .edu and .gov domains.** Total count also matters more.                           |
-| Content length         | Depth and completeness over raw word count                       | Explicitly prefers longer-form, comprehensive content.                                               |
-| Webmaster tools        | Google Search Console                                            | **Bing Webmaster Tools — completely separate. Manual sitemap submission required.**                  |
-| Structured data        | Powers rich results + AI Overviews                               | Powers Bing rich results + Copilot citations                                                         |
+| Factor                 | Google | Bing |
+| ---------------------- | ------ | ---- |
+| Webmaster tools        | Google Search Console | Bing Webmaster Tools: a separate account, but it can import sites and their sitemaps from Search Console |
+| Fast URL notification  | Sitemaps with accurate `<lastmod>`; RSS/Atom feeds; the Indexing API is only for job postings and livestream videos | IndexNow (shared with Yandex, Seznam, Naver, Yep); URL Submission API; sitemaps with `<lastmod>` |
+| Sitemap tags           | Ignores `<priority>` and `<changefreq>`; uses `<lastmod>` if consistently accurate | Ignores `<changefreq>` and `<priority>`; uses `<lastmod>` to decide what to recrawl |
+| JavaScript rendering   | Renders JavaScript, but JS sites are harder to get right | Renders JavaScript; has advised pre-rendering for JS-heavy sites. Server HTML is safest for both. |
+| AI answers             | AI Overviews and AI Mode, grounded in Google's index; no special markup or files | Copilot and Bing grounding results; the Feb 2026 guidelines cover GEO, prompt injection and AI manipulation |
+| AI opt-out controls    | Search Console "Search generative AI" setting; `nosnippet`, `data-nosnippet`, `max-snippet`, `noindex`. Google-Extended covers Gemini training and grounding only. | `NOARCHIVE` (no use in Copilot answers), `NOCACHE` (URL, title and snippet only), `nosnippet` / `data-nosnippet`, `noindex` |
+| AI measurement         | Search Console Generative AI performance report | Bing Webmaster Tools AI Performance report (preview) |
+| Indexing priority      | **Mobile-first indexing** | No published mobile-first policy; keep mobile and desktop content equivalent |
+| Local                  | Google Business Profile | Bing Places for Business |
+| Social signals         | Not a documented ranking factor | Not a documented ranking factor |
+
+**Sources:** https://developers.google.com/search/docs/fundamentals/ai-optimization-guide · https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap · https://developers.google.com/search/apis/indexing-api/v3/quickstart · https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a · https://blogs.bing.com/webmaster/2025/7/Keeping-Content-Discoverable-with-Sitemaps-in-AI-Powered-Search/ · https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/ · https://www.indexnow.org
 
 ---

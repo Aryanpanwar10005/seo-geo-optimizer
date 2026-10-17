@@ -22,13 +22,12 @@ const SKILL_DIR = path.join(ROOT, 'skills', 'seo-geo-optimizer');
 const REF_DIR = path.join(SKILL_DIR, 'references');
 
 const DESCRIPTION =
-  'Full SEO and GEO (generative engine optimization) workflow for a website or web app: technical SEO, ' +
-  'meta tags, JSON-LD structured data, Core Web Vitals, sitemaps, robots.txt and AI crawler access, ' +
-  'content and blog SEO, and visibility in Google, Bing, AI Overviews, Copilot, ChatGPT and Perplexity. ' +
-  'Use when the user asks for an SEO or GEO audit, wants better search rankings or more AI-search ' +
-  'citations, or invokes seo-geo-optimizer. Answer one-off SEO questions directly; start the guided ' +
-  'workflow (intake questions, competitor analysis, an approval gate, then tiered execution) only when ' +
-  'the user asks to run seo-geo-optimizer.';
+  'SEO and GEO (generative engine optimization) for websites and web apps: technical SEO, meta tags, ' +
+  'structured data, Core Web Vitals, sitemaps, robots.txt and AI crawlers, content SEO, and visibility in ' +
+  'Google (including AI Overviews and AI Mode), Bing and Copilot, ChatGPT search and Perplexity. Use it for ' +
+  'any SEO or GEO question about a site, so answers follow its myth list and official sources, and for full ' +
+  'audits. One-off questions get a direct answer. The guided workflow (intake questions, competitor ' +
+  'analysis, an approval gate, then tiered execution) starts only when the user asks to run seo-geo-optimizer.';
 
 const FRONTMATTER = [
   '---',
