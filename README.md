@@ -46,6 +46,12 @@ Open your terminal inside your project folder and run:
 
 That's it. The installer auto-detects your IDE and places the skill in the right directory.
 
+### Or add it as an Agent Skill (Claude Code, Codex, Cursor and other agents)
+
+`npx skills add Aryanpanwar10005/seo-geo-optimizer`
+
+The skill also ships in the open [Agent Skills](https://agentskills.io) format at [`skills/seo-geo-optimizer/SKILL.md`](skills/seo-geo-optimizer/SKILL.md). To add it by hand in Claude Code, copy that folder to `.claude/skills/seo-geo-optimizer/`.
+
 ### Trigger the Skill
 
 Once installed, the skill stays dormant in **PASSIVE MODE**. To activate it, open your AI chat and type:
@@ -400,6 +406,11 @@ If your IDE isn't listed, place the skill content in your IDE's system prompt or
 seo-geo-optimizer/
 ├── skill/
 │   └── SEO_GEO_SKILL.md        ← The skill file (place in your IDE)
+├── skills/
+│   └── seo-geo-optimizer/
+│       └── SKILL.md            ← Same skill in Agent Skills format (generated)
+├── scripts/
+│   └── sync-skill.js           ← Regenerates skills/…/SKILL.md from skill/
 ├── bin/
 │   └── install.js              ← Auto-installer (run via npx)
 ├── test/
@@ -431,7 +442,7 @@ Copy the contents of [`skill/SEO_GEO_SKILL.md`](skill/SEO_GEO_SKILL.md)
 | Cursor         | `.cursor/rules/seo-geo-optimizer.mdc`   |
 | Windsurf       | `.windsurf/rules/seo-geo-optimizer.mdc` |
 | GitHub Copilot | `.github/copilot-instructions.md`       |
-| Claude Code    | `CLAUDE.md`                             |
+| Claude Code    | `.claude/skills/seo-geo-optimizer/SKILL.md` (from `skills/`) or `CLAUDE.md` |
 | Trae           | `.trae/rules.md`                        |
 | Bolt.new       | `.bolt/prompt`                          |
 | Lovable        | `AGENTS.md`                             |
@@ -446,7 +457,7 @@ Open your AI chat and type: `/seo` or `run seo-geo-optimizer`
 Contributions are welcome. Before opening a PR:
 
 1. Fork the repo
-2. Make your changes to `skill/SEO_GEO_SKILL.md` or `bin/install.js`
+2. Make your changes to `skill/SEO_GEO_SKILL.md` (then run `npm run sync:skill`) or `bin/install.js`
 3. Run `npm run validate` to check skill file integrity
 4. Open a PR with a clear description of what changed and why
 
@@ -474,6 +485,6 @@ MIT — see [LICENSE](LICENSE) for details.
 **[⭐ Star this repo](https://github.com/Aryanpanwar10005/seo-geo-optimizer/stargazers)**
 if it saves you time — it helps others find it too.
 
-Made with ☕ by [Aryan Panwar](https://github.com/Aryanpanwar10005)
+Made with ☕ by [Aryan Panwar](https://aryanpanwar.in) · [Why I built it](https://aryanpanwar.in/case-studies/seo-geo-optimizer)
 
 </div>

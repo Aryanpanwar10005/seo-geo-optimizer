@@ -23,6 +23,9 @@ jobs:
           fi
           echo "✅ skill/SEO_GEO_SKILL.md exists"
 
+      - name: Check Agent Skills copy is in sync
+        run: node scripts/sync-skill.js --check
+
       - name: Check skill file is not empty
         run: |
           SIZE=$(wc -c < "skill/SEO_GEO_SKILL.md")
