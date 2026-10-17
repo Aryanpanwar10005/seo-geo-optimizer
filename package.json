@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "description": "SEO and GEO skill for AI coding agents (Claude Code, Codex, Cursor, GitHub Copilot, Windsurf, Antigravity and more). Guides your agent through technical SEO, structured data and AI-search visibility for Google, Bing, ChatGPT and Perplexity.",
   "bin": {
-    "seo-geo-optimizer": "./bin/install.js"
+    "seo-geo-optimizer": "bin/install.js"
   },
   "scripts": {
     "start": "node bin/install.js",
@@ -56,7 +56,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aryanpanwar10005/seo-geo-optimizer.git"
+    "url": "git+https://github.com/Aryanpanwar10005/seo-geo-optimizer.git"
   },
   "bugs": {
     "url": "https://github.com/Aryanpanwar10005/seo-geo-optimizer/issues"
