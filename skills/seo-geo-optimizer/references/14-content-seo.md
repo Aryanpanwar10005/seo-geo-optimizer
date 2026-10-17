@@ -14,33 +14,38 @@ Before using any guidance in this section, the AI must internalize these non-neg
 
 - Make false ranking promises — SEO involves variables outside anyone's control
 - Write fake reviews, fake testimonials, or manufactured social engagement of any kind
-- Use paid review schemes — violates Google's spam policies and consumer protection laws in most jurisdictions
-- Claim credentials, expertise, or experience the author does not actually have
+- Use paid or incentivized reviews without clear disclosure — violates Google's review snippet guidelines and consumer protection laws in most jurisdictions
+- Claim credentials, expertise, or experience the author does not actually have, or create fake author profiles (made-up names, AI-generated headshots) — Google calls this deception
 - Mark up content in schema that does not visibly exist on the page — Google requires schema to reflect visible page content
-- Change publication dates without making meaningful content updates — Google's December 2025 Core Update explicitly penalizes this as deceptive
+- Change publication dates without making meaningful content updates — Google's helpful-content guidance flags "changing the date of pages to make them seem fresh" as a warning sign
+- Generate pages at scale (with AI or otherwise) mainly to manipulate rankings or AI answers — scaled content abuse
 - Make superlative claims ("best in the world", "#1 guide") without verifiable evidence
 - Copy or reuse competitors' content
 
 **Source:** Google Search Essentials — https://developers.google.com/search/docs/essentials
 **Source:** Google Spam Policies — https://developers.google.com/search/docs/essentials/spam-policies
+**Source:** Helpful content — https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+**Source:** Review snippet guidelines — https://developers.google.com/search/docs/appearance/structured-data/review-snippet
 
 ---
 
 ### 14.1 — H1 / H2 / H3 HEADING RULES
 
-**Official basis:** Google Developer Style Guide (https://developers.google.com/style/headings), Gary Illyes SEO Office Hours July 2024, John Mueller statements on heading structure
+**Official basis:** Google SEO Starter Guide (headings and their order), Google title link documentation, Google Developer Style Guide (https://developers.google.com/style/headings — writing style, not ranking guidance)
+
+Google says heading order doesn't matter for ranking and there's no ideal number of headings. The rules below are for readers and accessibility.
 
 #### H1 Rules
 
-| Rule                                         | Explanation                                                                                                                                                 |
-| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| One primary H1 per page                      | Best practice for clarity — Google's John Mueller has confirmed multiple H1s do not technically harm SEO, but one clear H1 signals the page's primary topic |
-| H1 ≠ title tag                               | The `<title>` tag is for SERPs; the H1 is for the page. They should be related but different. Google rewrites title tags when they don't match page content |
-| Contains the primary keyword naturally       | Do not force it — if the keyword fits naturally, use it; if it creates awkward phrasing, prioritize readability                                             |
-| Describes the page's exact purpose           | Per Google's developer style guide: "Write document titles based on the primary purpose of the document"                                                    |
-| 20–70 characters is the readable range       | No official character limit — but longer H1s reduce scannability                                                                                            |
-| Never use H1 for styling                     | Use CSS for visual formatting. Reserve heading tags for content structure                                                                                   |
-| Homepage H1 ≠ Blog post H1 ≠ Product page H1 | Each page type has a different primary purpose — the H1 formula changes accordingly                                                                         |
+| Rule                                         | Explanation |
+| -------------------------------------------- | ----------- |
+| One primary H1 per page                      | A clarity convention. Google says multiple headings don't hurt Search, but one clear H1 tells readers the page's primary topic |
+| H1 and title describe the same topic         | They can match or differ. Google may use the H1 for the title link if the `<title>` is unhelpful |
+| Contains the primary keyword naturally       | Do not force it — if the keyword fits naturally, use it; if it creates awkward phrasing, prioritize readability |
+| Describes the page's exact purpose           | Per Google's developer style guide: "Write document titles based on the primary purpose of the document" |
+| 20–70 characters is a readable range         | Heuristic only — no official character limit |
+| Never use H1 for styling                     | Use CSS for visual formatting. Reserve heading tags for content structure |
+| Homepage H1 ≠ Blog post H1 ≠ Product page H1 | Each page type has a different primary purpose — the H1 formula changes accordingly |
 
 **Homepage H1 formula:** `[Brand Name] — [What You Do] for [Who You Serve]`
 **Blog post H1 formula:** `[Primary Keyword Naturally Phrased as the Article's Exact Topic]`
@@ -48,54 +53,53 @@ Before using any guidance in this section, the AI must internalize these non-neg
 
 #### H2 Rules
 
-H2 tags mark the major sections of a page. Each H2 is a self-contained topic block.
+H2 tags mark the major sections of a page. Each H2 covers one clear subtopic so readers can scan and jump in from search. Google says there's no need to break content into small chunks for AI features; write sections for readers.
 
-**Critical for AI search visibility:** Google AI Overviews and featured snippets extract content by block — by H2 section — not by full page. A self-contained H2 block that fully answers its implied question is the primary format that gets extracted and cited.
-
-| Rule                                                  | Explanation                                                                                                        |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Each H2 is a standalone answer block                  | The content immediately below each H2 must answer that H2's question completely, without relying on other sections |
-| Question-format H2s for informational content         | "What is X?", "How does X work?", "Why does X matter?" — these match voice search and People Also Ask queries      |
-| Statement-format H2s for listicles and how-to content | "The 5 types of X", "How to do X in 3 steps" — clearer for structured content                                      |
-| Contains semantic keyword variants naturally          | Use related terms and synonyms — do not repeat the exact H1 keyword                                                |
-| One heading every 200–300 words                       | Observable pattern across top-ranking pages for scannability and crawl structure                                   |
-| Descriptive — never vague                             | "Introduction" and "Overview" are weak H2s. "What Core Web Vitals Are and Why They Affect Rankings" is strong      |
-| H2 anchor text previews the section                   | The reader should know what they will find in the section just from reading the H2                                 |
+| Rule                                                  | Explanation |
+| ----------------------------------------------------- | ----------- |
+| Each H2 section makes sense on its own                | Readers often land mid-page; the content below each H2 should cover that subtopic without relying on other sections |
+| Question-format H2s for informational content         | "What is X?", "How does X work?", "Why does X matter?" — these mirror People Also Ask questions |
+| Statement-format H2s for listicles and how-to content | "The 5 types of X", "How to do X in 3 steps" — clearer for structured content |
+| Contains semantic keyword variants naturally          | Use related terms and synonyms — do not repeat the exact H1 keyword |
+| Add headings where the topic changes                  | No ideal number or frequency (Google); if it feels like too many, it probably is |
+| Descriptive — never vague                             | "Introduction" and "Overview" are weak H2s. "What Core Web Vitals Are and Why They Affect Rankings" is strong |
+| H2 text previews the section                          | The reader should know what they will find in the section just from reading the H2 |
 
 #### H3 Rules
 
 H3 is a subsection within an H2. It is never placed without a parent H2.
 
-| Rule                                          | Explanation                                                             |
-| --------------------------------------------- | ----------------------------------------------------------------------- |
+| Rule                                          | Explanation |
+| --------------------------------------------- | ----------- |
 | Never place H3 without a parent H2            | Do not skip heading levels — breaks logical structure and accessibility |
 | Use for sub-angles within an H2 section       | Drilling into a specific example, a definition, a step within a process |
-| Long-tail keyword variants fit naturally here | H3s often match the most specific, long-tail search queries             |
-| Do not use H3 for styling                     | Same rule as H1 — heading tags are for structure, not visual design     |
+| Long-tail keyword variants fit naturally here | H3s often match the most specific, long-tail search queries |
+| Do not use H3 for styling                     | Same rule as H1 — heading tags are for structure, not visual design |
 
 **What to never do with any heading tag:**
 
-- Skip levels (H1 → H3 without H2) — breaks both accessibility and logical flow
+- Skip levels (H1 → H3 without H2) — breaks accessibility and logical flow (Google says order doesn't affect ranking)
 - Use empty headings with no content beneath them
 - Stuff keywords into headings
 - Use identical headings on different pages of the same site
 
+**Source:** https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+**Source:** https://developers.google.com/search/docs/appearance/title-link
 **Source:** https://developers.google.com/style/headings
-**Source:** https://developers.google.com/search/docs/appearance/featured-snippets
 
 ---
 
 ### 14.2 — BLOG POST STRUCTURE FRAMEWORK
 
-**Official basis:** Google Helpful Content System (https://developers.google.com/search/docs/fundamentals/creating-helpful-content), Google Quality Rater Guidelines January 2025
+**Official basis:** Google's helpful-content guidance (https://developers.google.com/search/docs/fundamentals/creating-helpful-content), Google Quality Rater Guidelines (September 2025 version; raters don't directly affect rankings)
 
-Google's December 2025 Core Update reinforced that content must demonstrate first-hand experience, serve user needs completely, and be structured to answer the query directly.
+Google's guidance on helpful, people-first content asks for first-hand experience, content that fully serves the reader, and a structure that makes the answer easy to find.
 
 #### Compliant Blog Post Structure
 
 ```
 1. H1 Title — primary keyword, describes the article's exact topic
-   (Note: H1 and <title> tag should be related but not identical)
+   (Note: H1 and <title> describe the same topic; they may match or differ)
 
 2. Introduction — 2–3 sentences
    → Answer the main question FIRST (inverted pyramid — give the answer, then support it)
@@ -104,23 +108,22 @@ Google's December 2025 Core Update reinforced that content must demonstrate firs
 
 3. Key Takeaways (optional but recommended)
    → 3–5 bullet points summarizing the main answers
-   → Helps AI search engines extract citation-worthy content
-   → Reduces bounce rate for users who scan before reading
+   → Helps readers who scan before reading
 
 4. H2 Section 1 — major subtopic
-   → Self-contained answer block
+   → Covers one subtopic completely
    → H3 subpoints if the H2 topic has distinct sub-angles
-   → Minimum 150 words of substantive content below this H2
+   → Enough substance to cover the subtopic (no Google word count)
 
 5. H2 Section 2 — next major subtopic
    → Same rules apply
 
 6. [Repeat H2 sections as needed to fully cover the topic]
 
-7. H2 — FAQ Section
-   → Question-format H2s targeting People Also Ask and voice search queries
-   → Each question answered directly below in 2–4 sentences (paragraph snippet format)
-   → Add FAQPage schema to these questions (see Part 5 of this skill)
+7. H2 — FAQ Section (optional)
+   → Question-format headings for real questions readers ask (People Also Ask)
+   → Each question answered directly below in 2–4 sentences
+   → FAQPage markup is optional and gives no Google rich result (see Part 6)
 
 8. Conclusion — 2–4 sentences
    → Brief summary of what was covered
@@ -133,7 +136,7 @@ Google's December 2025 Core Update reinforced that content must demonstrate firs
    → Link to the full author page
 ```
 
-#### What Google Rewards (December 2025 Core Update + Quality Rater Guidelines)
+#### What Google's Guidance Rewards (Helpful-Content Guidance + Quality Rater Guidelines)
 
 - First-hand, lived experience with the topic — specific details, original observations, not paraphrased generic knowledge
 - Content that fully satisfies the user's query without requiring them to go elsewhere
@@ -141,17 +144,17 @@ Google's December 2025 Core Update reinforced that content must demonstrate firs
 - Depth appropriate to the topic — not padding, not artificial length
 - Original data, examples, screenshots, or case studies where possible
 
-#### What Google Penalizes
+#### What Google's Policies and Systems Work Against
 
-- Mass-produced AI content without expert human oversight and editing
-- Generic "SEO content" optimized for keywords but not for actual user value
-- Outdated content without recent updates or accuracy verification
+- Pages generated at scale (with AI or otherwise) mainly to manipulate rankings — scaled content abuse
+- Generic "SEO content" written for search engines rather than readers
+- Content that is inaccurate or out of date for what the reader needs
 - Thin affiliate content that lacks original analysis or testing
-- Changing publication dates without making meaningful content changes (explicitly penalized in December 2025 Core Update)
+- Changing dates to make pages seem fresh without substantial changes (a warning sign in Google's helpful-content guidance)
 
 #### Content Length Guidelines
 
-Google does not have an official word count requirement. Length must match what is required to fully answer the query:
+Google has no word count requirement: "There's no magical word count target, minimum or maximum." Length must match what is required to fully answer the query. The ranges below are **heuristics**, not Google rules:
 
 | Content type                      | Typical range   | Rationale                           |
 | --------------------------------- | --------------- | ----------------------------------- |
@@ -160,18 +163,19 @@ Google does not have an official word count requirement. Length must match what 
 | FAQ article                       | 600–1,200 words | Answers multiple specific questions |
 | News / update post                | 300–600 words   | Timeliness matters more than length |
 
-Do not pad content. Filler paragraphs dilute the article's quality signal.
+Do not pad content. Filler paragraphs make the article worse for readers.
 
 **Source:** https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+**Source:** https://developers.google.com/search/docs/fundamentals/seo-starter-guide
 **Source:** https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf
 
 ---
 
 ### 14.3 — ARTICLE AND BLOGPOSTING SCHEMA
 
-**Official basis:** https://developers.google.com/search/docs/appearance/structured-data/article (updated December 2025)
+**Official basis:** https://developers.google.com/search/docs/appearance/structured-data/article (last updated 8 Sep 2026)
 
-Article schema helps Google understand blog and news content and enables rich results including larger images, author information, and publication dates in search results and Google Discover.
+Article structured data can help Google understand the page and show better title text, images and date information in Google Search and other Google products. There are no required properties; add the ones that apply.
 
 #### Which Schema Type to Use
 
@@ -187,7 +191,7 @@ Article schema helps Google understand blog and news content and enables rich re
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Article title — maximum 110 characters",
+  "headline": "Concise article title",
   "image": [
     "https://example.com/image-1x1.jpg",
     "https://example.com/image-4x3.jpg",
@@ -208,7 +212,7 @@ Article schema helps Google understand blog and news content and enables rich re
       "url": "https://example.com/logo.png"
     }
   },
-  "description": "Meta description of the article — 120–160 characters",
+  "description": "Accurate summary of the article",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://example.com/full-article-url"
@@ -218,23 +222,23 @@ Article schema helps Google understand blog and news content and enables rich re
 
 #### Critical Schema Rules
 
-| Rule                                                 | Why it matters                                                                           |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `headline` max 110 characters                        | Truncated in rich results beyond this                                                    |
-| Images in all three aspect ratios                    | Required for full rich result eligibility — 1:1, 4:3, and 16:9                           |
-| `dateModified` reflects actual content changes only  | Google penalizes fake freshness — only update when substantive changes are made          |
-| `author.url` links to a real author page             | Author page must have credentials — not a generic homepage                               |
+| Rule                                                 | Why it matters |
+| ---------------------------------------------------- | -------------- |
+| Concise `headline`                                   | No fixed limit; Google notes long titles may be truncated on some devices |
+| Several high-res images in 16:9, 4:3 and 1:1         | Google recommends it "for best results" (each at least 50K pixels); not required |
+| `dateModified` reflects actual content changes only  | Google warns against changing dates to make pages seem fresh |
+| `author.url` links to a real author page             | Google recommends author.url or sameAs; the author page should describe the author |
 | Schema must reflect visible page content             | Never mark up content users cannot see — Google requires markup to match on-page content |
-| Validate with Rich Results Test after implementation | https://search.google.com/test/rich-results                                              |
+| Validate with Rich Results Test after implementation | https://search.google.com/test/rich-results |
 
 #### Schema Combinations for Blog Pages
 
 On a blog post page, these schema types can be used together:
 
 - `BlogPosting` — the article itself
-- `FAQPage` — if a FAQ section is present on the page
 - `BreadcrumbList` — for navigation hierarchy
 - `Person` — for the author (can be placed on the author page)
+- `FAQPage` — optional, only if a visible FAQ section exists (no Google rich result)
 
 **Source:** https://developers.google.com/search/docs/appearance/structured-data/article
 **Source:** https://schema.org/BlogPosting
@@ -243,14 +247,14 @@ On a blog post page, these schema types can be used together:
 
 ### 14.4 — CONTENT CLUSTER AND PILLAR PAGE FRAMEWORK
 
-**Official basis:** Google's topical authority signals, Google June 2025 Core Update (topical authority rewarded), internal linking best practices from Google Search Central
+**Official basis:** Google's crawlable links and SEO Starter Guide documentation on site structure and internal linking. The pillar-cluster model itself is an industry practice, not a Google rule.
 
 #### The Pillar-Cluster Model
 
 ```
 PILLAR PAGE (1 per broad topic)
 ├── Targets the broad, competitive head keyword
-├── 2,000+ words covering the topic comprehensively
+├── Covers the topic comprehensively (no word count rule)
 ├── Links out to every cluster page in the topic group
 ├── Updated as the topic evolves
 │
@@ -262,7 +266,7 @@ PILLAR PAGE (1 per broad topic)
 ├── CLUSTER PAGE 2 — specific subtopic B
 │   └── Same structure
 │
-└── CLUSTER PAGE 3–12 — (8–12 cluster pages per pillar minimum)
+└── MORE CLUSTER PAGES — as many as the topic genuinely needs (heuristic: 5–12)
 ```
 
 #### Pillar Page Rules
@@ -270,7 +274,7 @@ PILLAR PAGE (1 per broad topic)
 - One pillar per broad topic on the site — the most comprehensive, authoritative page on that subject
 - Must link out to every cluster page in its topic group using descriptive anchor text
 - Should cover the topic at a level that makes it a useful starting point for any subtopic the user might want to explore
-- Prioritize in XML sitemap (higher priority value)
+- Link to it prominently from navigation and from its cluster pages (sitemap `<priority>` is ignored by Google and Bing)
 - Update when new cluster pages are added or when the topic evolves
 
 #### Cluster Page Rules
@@ -278,27 +282,29 @@ PILLAR PAGE (1 per broad topic)
 - Cover exactly ONE specific subtopic — do not bleed into another cluster page's territory
 - Every cluster page must link back to its pillar page using relevant, descriptive anchor text
 - Anchor text must describe the target page — never use "click here", "read more", or "this article"
-- Each cluster page links to 2–3 related cluster pages within the same topic group (horizontal linking)
+- Each cluster page links to 2–3 related cluster pages within the same topic group (horizontal linking — heuristic)
 - Keyword cannibalization check: if two cluster pages target the same primary keyword with the same intent, consolidate them into one
 
 #### Internal Linking Rules
 
-| Rule                                                                          | Source                               |
-| ----------------------------------------------------------------------------- | ------------------------------------ |
-| Click depth ≤ 3 from homepage to any important page                           | Google's crawlability guidelines     |
-| Under 100 internal links per page                                             | Google's documented recommendation   |
-| Contextual anchor text only — describes the target page topic                 | Google Search Central                |
-| Fix orphan pages (zero inbound internal links) — they cannot rank effectively | Screaming Frog / GSC coverage report |
-| No linking purely for link equity — every link must serve user navigation     | Google spam policies                 |
+| Rule | Source |
+| ---- | ------ |
+| Every important page is reachable through crawlable `<a href>` links | Google: crawlable links |
+| No fixed link count: "There's no magical ideal number of links a given page should contain" | Google: crawlable links |
+| Important pages within ~3 clicks of the homepage | Heuristic (no Google rule) |
+| Descriptive anchor text that tells readers what the target page is about | Google: crawlable links |
+| Fix orphan pages (zero inbound internal links) — search engines and readers struggle to find them | Google: crawlable links |
+| No linking schemes — every link must serve user navigation | Google spam policies (link spam) |
 
 **Source:** https://developers.google.com/search/docs/crawling-indexing/links-crawlable
-**Source:** https://developers.google.com/search/docs/essentials
+**Source:** https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+**Source:** https://developers.google.com/search/docs/essentials/spam-policies
 
 ---
 
 ### 14.5 — KEYWORD RESEARCH FOR CONTENT CREATION
 
-**Official basis:** Google Search Essentials, Google Helpful Content System
+**Official basis:** Google SEO Starter Guide, Google's helpful-content guidance, Google's AI optimization guide
 
 #### The Three Keyword Types
 
@@ -319,7 +325,7 @@ Before creating any content, identify the search intent — what the user actual
 | Commercial    | Research before deciding | Comparison, review, best-of list   |
 | Transactional | Ready to act or buy      | Product/service page, landing page |
 
-Creating informational content for a transactional keyword (or vice versa) will not rank — the content type must match the intent.
+Creating informational content for a transactional keyword (or vice versa) is unlikely to rank — the content type must match the intent.
 
 #### Free Research Tools
 
@@ -337,10 +343,12 @@ Google's language matching systems understand synonyms, related concepts, and en
 
 - Do not repeat the exact keyword phrase unnaturally — use the full range of related language
 - Cover the topic completely using natural language — related terms, synonyms, entity names
+- You don't need a page or phrase for every long-tail variation; Google's AI systems connect people with content even without an exact match
 - Write for readers first — Google's systems are designed to evaluate whether content genuinely serves users
 
 **Source:** https://developers.google.com/search/docs/fundamentals/seo-starter-guide
 **Source:** https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+**Source:** https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 
 ---
 
@@ -350,14 +358,14 @@ Google's language matching systems understand synonyms, related concepts, and en
 
 #### Title Tag Rules (for SERPs)
 
-| Rule                                   | Specification                                                                 |
-| -------------------------------------- | ----------------------------------------------------------------------------- |
-| Character length                       | 50–60 characters — beyond 60 is typically truncated in SERPs                  |
-| Primary keyword position               | Toward the front when natural — do not force it                               |
-| Must be accurate                       | Google rewrites title tags that don't match page content                      |
-| Title tag ≠ H1                         | They should be related but different — title is for SERPs, H1 is for the page |
-| No keyword stuffing                    | Google detects and rewrites manipulative title tags                           |
-| No superlative claims without evidence | "Best", "World's #1" — only use if you can substantiate the claim             |
+| Rule                                   | Specification |
+| -------------------------------------- | ------------- |
+| Length                                 | No limit; Google truncates to the device width (heuristic: ~50–60 characters often fits) |
+| Primary keyword position               | Toward the front when natural — do not force it |
+| Must be accurate                       | Google rewrites title links that don't match page content |
+| Title tag and H1                       | Describe the same topic; they may match or differ |
+| No keyword stuffing                    | Google may rewrite stuffed title tags, and stuffing violates spam policies |
+| No superlative claims without evidence | "Best", "World's #1" — only use if you can substantiate the claim |
 
 #### H1 Formulas by Content Type
 
@@ -394,7 +402,7 @@ Google's language matching systems understand synonyms, related concepts, and en
 
 **Official basis:** https://developers.google.com/search/docs/appearance/featured-snippets
 
-Featured snippets are automatically selected from pages already ranking in the top 10. You cannot apply — you structure content to make extraction easy.
+Google selects featured snippets automatically from indexed pages. There is no markup and no way to apply — you can only make the answer easy to find. To keep text out of snippets, use `nosnippet`, `data-nosnippet` or `max-snippet`.
 
 #### Snippet Type 1 — Paragraph Snippets
 
@@ -405,13 +413,13 @@ Best for: "What is X?", "Why does X happen?", "What causes X?"
 ```
 H2: What Is [Topic]?
 
-[Answer in 40–60 words starting with a direct definition]
+[A short, direct definition first — heuristic: 40–60 words]
 [Topic] is [definition]. [One supporting sentence explaining why this matters or how it works].
 
 [Additional context in the paragraphs that follow]
 ```
 
-Key rule: The answer block immediately below the H2 must stand alone — it must fully answer the H2's question without the reader needing any other section.
+Key rule: The answer immediately below the H2 should make sense on its own, so a reader landing on that section gets the answer.
 
 #### Snippet Type 2 — List Snippets
 
@@ -432,7 +440,7 @@ H2: How to [Do Specific Task]
 </ol>
 ```
 
-Key rule: Use proper HTML `<ol>` or `<ul>` list markup — not plain text dashes or asterisks. 5–8 items is the observable sweet spot for list snippets.
+Key rule: Use proper HTML `<ol>` or `<ul>` list markup — not plain text dashes or asterisks. 5–8 items is an observed pattern for list snippets (heuristic).
 
 #### Snippet Type 3 — Table Snippets
 
@@ -453,37 +461,38 @@ Key rule: Use proper HTML `<table>` markup. Keep tables under 5 columns for mobi
 
 #### Rules That Apply to All Snippet Types
 
-- The page must already be indexed and ranking to be eligible — snippet optimization is about extractability, not initial ranking
+- The page must be indexed and eligible for a snippet — snippet optimization is about clarity, not initial ranking
 - Never write clickbait questions as H2s without immediately answering them
-- The FAQ section (H2 question + direct answer) is the most reliable pattern for paragraph snippet eligibility
+- A clear question heading with a direct answer below it is a common pattern for paragraph snippets (heuristic)
 
 **Source:** https://developers.google.com/search/docs/appearance/featured-snippets
+**Source:** https://developers.google.com/search/docs/appearance/snippet
 
 ---
 
 ### 14.8 — AUTHOR E-E-A-T SIGNALS FOR BLOG CONTENT
 
-**Official basis:** Google Quality Rater Guidelines January 2025 (https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf), Google Helpful Content System
+**Official basis:** Google's helpful-content guidance (https://developers.google.com/search/docs/fundamentals/creating-helpful-content), Google Quality Rater Guidelines, September 2025 version (https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf)
 
-Google evaluates content at three levels: content level, author level, and site level. After the December 2025 Core Update, author-level signals are reviewed for all content types, not just YMYL (Your Money, Your Life) topics.
+Google's guidance asks "Who created the content?": bylines where readers expect them, leading to information about the author. E-E-A-T itself isn't a ranking factor, but Google's systems give more weight to content with signs of strong E-E-A-T on topics that could significantly affect health, finances, safety or well-being (YMYL).
 
-#### Required Author Page Elements
+#### Recommended Author Page Elements
 
-| Element                   | Requirement                                                                 |
-| ------------------------- | --------------------------------------------------------------------------- |
-| Full name                 | Not "Admin", "Editor", or "SEO Team"                                        |
-| Professional credentials  | Relevant to the topics the author writes about                              |
-| Years of experience       | Specific to the subject area                                                |
-| External profile links    | LinkedIn, professional associations, published work elsewhere               |
-| Photo                     | Increases human trust signals                                               |
+| Element                   | Guidance |
+| ------------------------- | -------- |
+| Full name                 | Not "Admin", "Editor", or "SEO Team" |
+| Professional credentials  | Relevant to the topics the author writes about, and true |
+| Experience                | Specific to the subject area |
+| External profile links    | LinkedIn, professional associations, published work elsewhere |
+| Photo                     | A real photo — never an AI-generated headshot for an invented person |
 | Link to authored articles | Bidirectional — author page links to articles, articles link to author page |
 
-#### Required Per-Article Author Elements
+#### Recommended Per-Article Author Elements
 
 - Visible byline with the author's full name — linked to the author page
 - 1–2 sentence bio excerpt at the bottom of the article
 - The full author page linked from the bio excerpt
-- Do NOT use generic bylines for any topic — especially not for health, finance, legal, or safety content
+- Avoid generic bylines — especially for health, finance, legal, or safety content
 
 #### Person Schema for Authors
 
@@ -507,12 +516,13 @@ Place this on the author's dedicated page:
 
 #### What NOT to Do (Ethical and Legal Boundaries)
 
-- Do NOT fabricate credentials — this is both an SEO risk and potentially illegal misrepresentation
-- Do NOT write fake testimonials or fabricated endorsements — violates FTC guidelines and Google's spam policies
-- Do NOT use paid review schemes — violates Google's spam policies and consumer protection laws in most jurisdictions
+- Do NOT fabricate credentials or author profiles — Google calls fake creator profiles deception, and it can be illegal misrepresentation
+- Do NOT write fake testimonials or fabricated endorsements — violates FTC guidelines and Google's policies
+- Do NOT use paid or incentivized reviews without clear disclosure — violates Google's review snippet guidelines and consumer protection laws in most jurisdictions
 - Do NOT claim expertise the author does not have
 - Do NOT use ghost authorship for YMYL content without disclosing the actual expert reviewer
 
+**Source:** https://developers.google.com/search/docs/fundamentals/creating-helpful-content
 **Source:** https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf
 **Source:** https://schema.org/Person
 
@@ -520,9 +530,11 @@ Place this on the author's dedicated page:
 
 ### 14.9 — CONTENT FRESHNESS AND UPDATE STRATEGY
 
-**Official basis:** Google December 2025 Core Update (https://developers.google.com/search/blog), Google Helpful Content System
+**Official basis:** Google's helpful-content guidance, ranking systems guide (freshness systems), and byline date documentation
 
-#### How Google's Freshness Algorithm Categorizes Queries
+Google runs "query deserves freshness" systems that show fresher content where people expect it (a movie that just came out, breaking news). For evergreen topics, accuracy matters more than recency.
+
+#### Planning Heuristic by Query Type (not a Google taxonomy)
 
 | Query type | Examples                            | Update priority                    |
 | ---------- | ----------------------------------- | ---------------------------------- |
@@ -549,7 +561,7 @@ Only update `dateModified` in schema AND on the page when these happen:
 - Adding an internal link without changing body content
 - Changing the date to look fresh without changing the content
 
-**Google's December 2025 Core Update explicitly penalizes fake freshness — changing dates without meaningful updates is now treated as a deceptive practice.**
+**Google's helpful-content guidance asks whether you are "changing the date of pages to make them seem fresh when the content has not substantially changed." Treat that as a deceptive practice. Adding or removing lots of content just to seem "fresh" doesn't help either ("No, it won't").**
 
 #### Content Audit Schedule
 
@@ -558,10 +570,11 @@ Only update `dateModified` in schema AND on the page when these happen:
 | Monthly             | Check GSC for pages losing impressions — candidates for update        |
 | Quarterly           | Refresh top-performing articles with new data and updated sections    |
 | Annually            | Full content audit — identify pages to update, consolidate, or remove |
-| On algorithm update | Re-evaluate pages that lost traffic against the update's stated focus |
+| On algorithm update | Re-evaluate pages that lost traffic against Google's core update guidance |
 
-**Source:** https://developers.google.com/search/blog
 **Source:** https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+**Source:** https://developers.google.com/search/docs/appearance/ranking-systems-guide
+**Source:** https://developers.google.com/search/docs/appearance/publication-dates
 
 ---
 
@@ -569,58 +582,59 @@ Only update `dateModified` in schema AND on the page when these happen:
 
 **Official basis:** Google Search Central Blog — Best practices for XML sitemaps and RSS/Atom feeds (https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom)
 
-Google officially recommends using BOTH XML sitemaps AND RSS/Atom feeds together:
+Google recommends using BOTH XML sitemaps AND RSS/Atom feeds together:
 
-- XML sitemaps: tell Google about all pages on the site
-- RSS/Atom feeds: tell Google about recent updates — crawled more frequently than sitemaps
+- XML sitemaps: describe all the URLs on the site
+- RSS/Atom feeds: describe recent changes; they're usually small and updated frequently
 
 #### RSS Feed Best Practices
 
-| Rule                                                        | Why                                                                                                     |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Include only canonical URLs                                 | Never include duplicate URLs — increases server load without improving indexing                         |
-| Set `pubDate` accurately                                    | Only update timestamps when content changes meaningfully — Google uses these to track content lifecycle |
-| Do NOT artificially modify timestamps                       | Google detects timestamp manipulation — treat this the same as fake freshness                           |
-| Submit RSS feed to Google Search Console (Sitemaps section) | Alongside the XML sitemap — not instead of it                                                           |
-| Submit RSS feed to Bing Webmaster Tools separately          | Completely separate from Google submission                                                              |
-| Keep feed to last 20–50 items                               | Practical standard — Google needs recent updates, not full history                                      |
-| All URLs in the feed must return 200 status codes           | Broken links in RSS confuse crawlers                                                                    |
+| Rule                                                        | Why |
+| ----------------------------------------------------------- | --- |
+| Include only canonical URLs                                 | Never include duplicate URLs — increases server load without improving indexing |
+| Set `pubDate` / last modification time accurately           | Only update timestamps when content changes meaningfully — Google uses these to track content lifecycle |
+| Do NOT artificially modify timestamps                       | Google uses `<lastmod>` only if it's consistently and verifiably accurate |
+| Submit RSS feed to Google Search Console (Sitemaps section) | Alongside the XML sitemap — not instead of it |
+| Submit RSS feed to Bing Webmaster Tools separately          | Completely separate from Google submission |
+| Keep feed to the last 20–50 items                           | Practical heuristic — the feed should hold all updates since Google last fetched it |
+| All URLs in the feed must return 200 status codes           | Broken links in RSS confuse crawlers |
 
 #### WebSub / PubSubHubbub
 
-John Mueller (Google) has recommended using RSS with WebSub (formerly PubSubHubbub) as the fastest method for getting new content indexed. This is a ping protocol that notifies Google and feed aggregators immediately when new content is published.
+Google's feed guidance recommends WebSub (formerly PubSubHubbub) so the feed always contains every update since Google last downloaded it. A WebSub hub pushes new feed content to subscribers (search engines, feed readers) as soon as you publish.
 
 - WordPress: supported natively by Jetpack and many SEO plugins
 - Custom sites: requires developer implementation
 - Protocol: https://www.w3.org/TR/websub/
 
-#### Bing-Specific: IndexNow
+#### Bing and Others: IndexNow
 
-Bing's IndexNow protocol allows direct URL submission the moment content is published — faster and more direct for Bing indexing than RSS alone. Use both in parallel:
+IndexNow lets a site notify Bing (and Yandex, Seznam, Naver and Yep) the moment a URL is added, updated or deleted. Google doesn't use IndexNow. Bing recommends using it together with an accurate sitemap:
 
-- RSS/Atom feed submitted to Bing Webmaster Tools
+- RSS/Atom feed or sitemap submitted to Bing Webmaster Tools
 - IndexNow API for immediate URL submission on publish
 - IndexNow documentation: https://www.indexnow.org
 
 **Source:** https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom
-**Source:** https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a
+**Source:** https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+**Source:** https://blogs.bing.com/webmaster/2025/7/Keeping-Content-Discoverable-with-Sitemaps-in-AI-Powered-Search/
 **Source:** https://www.indexnow.org
 
 ---
 
 ### 14.11 — CONTENT CALENDAR AND PUBLISHING CADENCE
 
-**Official basis:** Google Helpful Content System (https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+**Official basis:** Google's helpful-content guidance (https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 
 Quality always supersedes quantity. One excellent, comprehensive article outranks ten thin ones. Publishing cadence matters only when quality is maintained.
 
-#### Recommended Content Calendar Framework
+#### Recommended Content Calendar Framework (heuristic)
 
 **Monthly minimum (for sites building authority):**
 
 - 2 cluster articles supporting active pillar pages
 - 1 content refresh of an existing page losing impressions in GSC
-- 1 FAQ-rich article targeting People Also Ask terms in the niche
+- 1 article answering real questions people ask in the niche (People Also Ask)
 
 **Quarterly:**
 
@@ -630,10 +644,10 @@ Quality always supersedes quantity. One excellent, comprehensive article outrank
 
 **On algorithm update announcement:**
 
-- Wait for full rollout (typically 1–3 weeks) before making major decisions
+- Wait for the rollout to finish (recent core updates took about 2–3 weeks; check the Search Status Dashboard) before making major decisions
 - Compare pre/post impression data in GSC
-- Update content based on the stated focus of the update
-- Monitor: https://developers.google.com/search/blog for official update announcements
+- Improve content against Google's core update guidance; don't chase rumored causes
+- Monitor: https://developers.google.com/search/blog and https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history
 
 #### Keyword Cannibalization Prevention
 
@@ -650,5 +664,6 @@ Before creating any new article, check whether an existing page on the site alre
 - Do not publish dummy or "coming soon" pages — unpublished drafts should remain private until complete
 
 **Source:** https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+**Source:** https://developers.google.com/search/docs/appearance/core-updates
 
 ---
