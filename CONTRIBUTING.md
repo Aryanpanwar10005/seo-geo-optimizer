@@ -15,6 +15,8 @@ The most useful contributions are:
 - A reference URL broke or redirected — update it with the current URL
 - A new schema type is now supported in Google Rich Results
 
+After editing `skill/SEO_GEO_SKILL.md`, run `npm run sync:skill` so the Agent Skills copy at `skills/seo-geo-optimizer/SKILL.md` matches. CI fails if the two differ.
+
 **Installer improvements** (`bin/install.js`)
 - A new AI IDE emerged that has a known rules file path
 - An existing IDE changed where it reads its rules file
