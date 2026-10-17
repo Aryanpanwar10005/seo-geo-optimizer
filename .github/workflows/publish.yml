@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: read
+  id-token: write # npm trusted publishing (OIDC) and provenance
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -12,8 +16,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           registry-url: 'https://registry.npmjs.org/'
+      # Trusted publishing needs npm 11.5.1 or newer; Node 22 ships npm 10.
+      - run: npm install -g npm@latest
       - run: npm ci
       - run: npm run validate
       - run: npm test
@@ -25,7 +31,9 @@ jobs:
             echo "Error: package.json version ($PKG_VERSION) does not match git tag ($GIT_TAG)"
             exit 1
           fi
-      # NPM_TOKEN must be added as a repository secret in GitHub → Settings → Secrets
-      - run: npm publish
+      # Authenticates with npm trusted publishing when it is configured for this
+      # repo on npmjs.com (no token needed). Otherwise it falls back to the
+      # NPM_TOKEN secret, which must be a granular token with "Bypass 2FA" enabled.
+      - run: npm publish --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Required secret: set NPM_TOKEN in repo settings
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
